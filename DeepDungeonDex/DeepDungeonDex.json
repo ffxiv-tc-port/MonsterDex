@@ -1,8 +1,8 @@
 {
   "Author": "WildWolf",
   "Name": "MonsterDex",
-  "Punchline": "Live monster data.",
-  "Description": "A live bestiary.\nShows target mob aggro type, a subjective threat level, status vulnerabilities, and a general overview of notable mechanics.\nThreat level is meant to be taken with a grain of salt, is aimed towards solo players, and assumes a general familiarity with deep dungeon mechanics and the class being played.\nInformation is accurate to the best of my knowledge based on crowdsourced information, but I could use your help! Please open an issue on the GitHub if you'd like to correct inaccurate or untested data.\nOriginally DeepDungeonDex",
+  "Punchline": "即時顯示深層迷宮魔物資料。",
+  "Description": "即時顯示深層迷宮魔物的仇恨類型、威脅程度、狀態弱點及重要機制概覽。\n威脅程度主要供單人攻略參考，資料來自社群蒐集；原名 DeepDungeonDex。",
   "Tags": [
     "deep dungeon",
     "achievements",
@@ -12,7 +12,7 @@
     "enemies"
   ],
   "Changelog": "",
-  "RepoUrl": "https://github.com/wolfcomp/MonsterDex",
+  "RepoUrl": "https://github.com/cycleapple/MonsterDex/tree/api13-tw",
   "ApplicableVersion": "any",
   "LoadPriority": 0,
   "AcceptsFeedback": false
