@@ -116,7 +116,7 @@ public class Floor : Window, IDisposable
         using var _ = Font.Font.RegularFont.Push();
         try
         {
-            ImGui.Text("Floor Help");
+            ImGui.Text("樓層指南");
             ImGui.TextUnformatted(_locale?.GetLocale($"{_dataPath[(_dataPath.LastIndexOf("/", StringComparison.Ordinal) + 1)..]}{floor}"));
         }
         catch (Exception e)

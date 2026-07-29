@@ -111,7 +111,7 @@ public class Config : Window, IDisposable
 
         var locales = _localeKeys.LocaleDictionary.Values.ToArray();
         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize("Locale").X);
-        if (ImGui.Combo("Locale", ref _loc, locales, locales.Length))
+        if (ImGui.Combo("語言", ref _loc, locales, locales.Length))
         {
             _config.Locale = _loc;
             _requests.ChangeLanguage();
