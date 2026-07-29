@@ -1,39 +1,39 @@
-Vulns: Vulns
-Undefined: Undefined
-Threat: Threat
-Vicious: Vicious
-Easy: Easy
-Dangerous: Dangerous
-Caution: Caution
-AggroType: Aggro Type
-Boss: Boss
-Sound: Sound
-Sight: Sight
-Proximity: Proximity
-Bloodlust: Bloodlust
-Magic: Magic
-Thanks: Thanks to the Deep Dungeons Discord server for a lot of community resources. Thanks to everyone who's taken the time to report incorrect or missing data! Special shoutouts to Maygi for writing the best Deep Dungeon guides out there!
-Save: Save
-Opacity: Opacity
-Notes: Notes
-NoDataFound: No data found for {0} ({1})
-IsClickthrough: Enable clickthrough
-FontSize: Font Size
-ShowId: Show debug information
-ShowCorrectionButton: Show correct data button
-LoadAllFont: Load all font faces (Can speed up load when changing languages)
-LoadAllFontWarning: This will load 30MB of fonts into memory and will cause lag and higher memory usage be warned on weaker systems.
-HideFloorGuide: Stop showing the floor guide when entering a new floor
-UnknownContent: Unknown Content no display available for {0}({1})
-CreateDataIssue: Create a data issue
-CorrectDataIssue: Correct a data issue
-ContentTypeNone: Overworld
-ContentTypeDeepDungeon: Deep Dungeon
-ContentTypeEureka: Eureka
-ContentTypeDiadem: Diadem
-ContentTypeBozja: Bozja
-ContentTypeIslandSanctuary: Island Sanctuary
+Vulns: 弱點
+Undefined: 未定義
+Threat: 威脅程度
+Vicious: 極度危險
+Easy: 容易
+Dangerous: 危險
+Caution: 注意
+AggroType: 仇恨類型
+Boss: 首領
+Sound: 聽覺感知
+Sight: 視覺感知
+Proximity: 接近感知
+Bloodlust: 低生命值感知
+Magic: 魔法感知
+Thanks: 感謝 Deep Dungeons Discord 社群提供大量資源，也感謝所有協助回報錯誤或缺漏資料的人！特別感謝 Maygi 撰寫了非常完整的深層迷宮攻略！
+Save: 儲存
+Opacity: 透明度
+Notes: 備註
+NoDataFound: 找不到 {0}（{1}）的資料
+IsClickthrough: 啟用滑鼠穿透
+FontSize: 字型大小
+ShowId: 顯示偵錯資訊
+ShowCorrectionButton: 顯示資料修正按鈕
+LoadAllFont: 載入所有字型（切換語言時可加快載入）
+LoadAllFontWarning: 這會額外載入約 30 MB 的字型，並可能造成延遲及較高的記憶體用量；效能較低的系統請留意。
+HideFloorGuide: 進入新樓層時不顯示樓層指南
+UnknownContent: 未知內容，無法顯示 {0}（{1}）
+CreateDataIssue: 回報缺少的資料
+CorrectDataIssue: 回報資料錯誤
+ContentTypeNone: 野外
+ContentTypeDeepDungeon: 深層迷宮
+ContentTypeEureka: 禁地優雷卡
+ContentTypeDiadem: 雲冠群島
+ContentTypeBozja: 南方博茲雅戰線
+ContentTypeIslandSanctuary: 無人島開拓
 NoDisplay: |
-  No Display Available for content {0}.
-  To remove this change your content selections in the settings.
-DataButtonsHidden: Clickthrough enabled buttons are hidden.
+  無法顯示內容 {0}。
+  若要隱藏此訊息，請在設定中調整要顯示的內容類型。
+DataButtonsHidden: 啟用滑鼠穿透時，資料回報按鈕將會隱藏。
