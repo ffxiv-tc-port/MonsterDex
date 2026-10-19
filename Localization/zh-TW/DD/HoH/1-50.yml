@@ -1,58 +1,58 @@
-7326: Eventual ENRAGE
-7324: Very wide line AoE
+7326: 最終會暴走
+7324: 極大範圍直線AoE
 7323: |
-  Green: Casts AoEs unaggroed
-7321: Large cone AoE
+  綠色：沒有仇恨也會詠唱AoE
+7321: 大範圍扇形AoE
 7320: |
-  Purple: double auto
-7319: Casts AoEs unaggroed
+  紫色：連續兩次平砍
+7319: 沒有仇恨也會詠唱AoE
 7318: |
-  Large line AoE
-  Eventual ENRAGE
-7314: Casts AoEs unaggroed
-7313: Gaze inflicts Otter
-7312: Frontal cleave without cast or telegraph
+  大範圍直線AoE
+  最終會暴走
+7314: 沒有仇恨也會詠唱AoE
+7313: 凝視攻擊附加「獺獺」狀態
+7312: 無詠唱、無預警的正面範圍斬擊
 7311: |
-  Line AoE inflicts Bleed
-  Low health ENRAGE
-7310: Extremely large AoE
-7308: Weak stack attack
-7306: Cleaves every other auto
+  直線AoE附加出血
+  血量過低會暴走
+7310: 超大範圍AoE
+7308: 低傷害的集合分攤攻擊
+7306: 每隔一次平砍會施放範圍斬擊
 7305: |
-  Line AoE inflicts Bleed
-  Low health ENRAGE
-7304: Low health ENRAGE
+  直線AoE附加出血
+  血量過低會暴走
+7304: 血量過低會暴走
 7303: |
-  Double auto inflicts Bleed
-  Low health ENRAGE
-7302: Casts AoEs unaggroed
-7300: Circle AoE inflicts Suppuration
-7299: Large AoE inflicts Paralysis
-7298: Cross AoE inflicts Suppuration
-7297: Line AoE inflicts Bleed
-7296: Gaze
-7295: Draw-in followed by cleave
-7292: Untelegraphed conal AoE with knockback, buster
-7291: Buffs own damage
+  連續兩次平砍附加出血
+  血量過低會暴走
+7302: 沒有仇恨也會詠唱AoE
+7300: 圓形AoE附加化膿狀態
+7299: 大範圍AoE附加麻痺
+7298: 十字型AoE附加化膿狀態
+7297: 直線AoE附加出血
+7296: 凝視攻擊
+7295: 先吸引拉近，接著施放範圍斬擊
+7292: 無預警扇形AoE並附帶擊退，屬於死刑技
+7291: 強化自身傷害
 7290: |
-  Casts AoEs with knockback unaggroed
-  Line AoE inflicts Bleed
-7289: Cures self and allies
-7288: Gaze inflicts Blind
-7286: Room wide ENRAGE
-7285: Buster and triple auto
-7281: Gaze inflicts Seduce, followed by large AoE that inflicts Minimum
-7279: Lite buster "Scissor Run" followed by AoE
-7273: Untelegraphed buster inflicts Bleed and knockback
-7272: Unavoidable tankbuster-like "Jaws"
+  沒有仇恨也會詠唱附帶擊退的AoE
+  直線AoE附加出血
+7289: 治療自身與友軍
+7288: 凝視攻擊附加失明
+7286: 全場範圍的暴走攻擊
+7285: 死刑技與連續三次平砍
+7281: 凝視攻擊附加魅惑，接著施放附加縮小狀態的大範圍AoE
+7279: 輕量死刑技「螯連擊」，接著施放AoE
+7273: 無預警死刑技附加出血與擊退
+7272: 無法迴避、類似死刑技的「利齒」
 7271: |
-  Conal AoE inflicts Bleed
-  Circle AoE inflicts knockback
-7270: AoE inflicts knockback
-7268: Gaze
-7267: AoE applies Bleed
-7266: Untelegraphed Sleep followed by AoE
-7265: Triple auto inflicts Bleed
-7264: AoE applies Paralysis
-7263: Auto applies Physical Vuln Up every 10s
-7262: Auto inflicts Heavy debuff
+  扇形AoE附加出血
+  圓形AoE附加擊退
+7270: AoE附加擊退
+7268: 凝視攻擊
+7267: AoE附加出血
+7266: 無預警睡眠，接著施放AoE
+7265: 連續三次平砍附加出血
+7264: AoE附加麻痺
+7263: 每10秒的平砍會附加物理易傷
+7262: 平砍附加沉重狀態

@@ -1,59 +1,59 @@
-5475: Double auto
-5473: Casts untelegraphed cone "Level 5 Death"
+5475: 連續兩次平砍
+5473: 施放無預警扇形AoE「5級致死一擊」
 5471: |
-  Kill blue bomb when it appears
-  Push red bomb into boss during "Massive Burst" cast, will wipe party if not stunned
-  Boss has cleave that does heavy damage
+  藍色炸彈出現時請將其擊殺
+  在「特大爆炸」詠唱期間將紅色炸彈擊退到王身上，若未打斷會團滅
+  王有造成大量傷害的範圍斬擊
 5470: |
-  If familiar with chimera mechanics can be engaged
-  "The Dragon's Voice" - be inside hit box
-  "The Ram's Voice" - be outside of melee range
+  熟悉奇美拉機制的話可以正面對戰
+  「雷電咆哮」－需站在判定範圍內
+  「冰凍咆哮」－需站在近戰距離外
 5467: |
-  Instant AoE burst does heavy damage and inflicts Slow
-  Instant cone inflicts Poison
+  瞬發AoE爆發造成大量傷害並附加緩速
+  瞬發扇形AoE附加中毒
 5466: |
-  Sucks in player and does heavy damage
-  "Tail Screw" does damage and inflicts Slow
+  吸引拉近玩家並造成大量傷害
+  「甩尾」會造成傷害並附加緩速
 5465: |
-  Instant AoE on pull, double autos
-  At 30 seconds will cast semi-enrage
-5464: Instant AoE that inflicts heavy Bleed
-5463: Double autos
+  拉怪瞬間會有AoE，連續兩次平砍
+  第30秒時會施放半暴走技
+5464: 瞬發AoE附加大量出血
+5463: 連續兩次平砍
 5461: |
-  "Charybdis" -- lingering ground tornadoes cast twice in a row that cause high damage if sucked into
-  Boss will run to top or bottom of arena and cast "Trounce" - wide conal AoE
-  At 15% casts FAST CAST "Ecliptic Meteor" - HIGH DAMAGE room wide with long cast that deals 80% of total health damage every 9 seconds
-5460: Cleave does heavy damage and inflicts potent Bleed
+  「大漩渦」－持續型地面龍捲風，會連續施放兩次，被吸入會造成高額傷害
+  王會跑到場地上方或下方，施放「呵斥」－大範圍扇形AoE
+  血量15%時會快速詠唱「黃道隕石」－高傷害全場AoE，每9秒造成總血量80%的傷害
+5460: 範圍斬擊造成大量傷害並附加強力出血
 5459: |
-  Cleave inflicts Bleed
-  "Flying Frenzy" targets a player and does heavy damage, Vuln Down, and stuns
-5458: Double autos
-5454: Buffs own damage and inflicts Physical Vuln Up with AoE damage out of combat
+  範圍斬擊附加出血
+  「狂亂」會鎖定一名玩家，造成大量傷害、附加減傷降低與暈眩
+5458: 連續兩次平砍
+5454: 強化自身傷害，並在戰鬥外以AoE傷害附加物理易傷
 5453: |
-  "Glower" - untelegraphed line AoE
-  "100-Tonze Swing" - untelegraphed point-blank AoE
+  「怒視」－無預警直線AoE
+  「100噸迴轉」－無預警自身周圍AoE
 5452: |
-  "Revelation" inflicts Confusion
-  "Tropical Wind" gives enemy a large Haste and damage buff
-5451: Has semi-enrage around 30s in combat
-5450: Double autos
+  「天啟」附加混亂
+  「極樂之風」會給予敵人大量急速與傷害強化
+5451: 進入戰鬥約30秒後會有半暴走
+5450: 連續兩次平砍
 5449: |
-  "Douse" -- lingering ground AoE that inflicts Bleed if stood in and buffs boss with Haste and Damage Up if left in it
-  Occasionally inflicts Heavy and casts targeted ground AoEs
-5443: Double autos
-5442: Double autos
+  「潑灑」－持續型地面AoE，站在裡面會附加出血，若不清除還會讓王獲得急速與傷害強化
+  偶爾會附加沉重狀態，並施放指定目標地面AoE
+5443: 連續兩次平砍
+5442: 連續兩次平砍
 5438: |
-  Drops lingering AoEs that cause heavy Bleed if stood in
-  "Valfodr" -- targeted unavoidable line AoE centered on player that causes strong knockback, avoid AoEs surrounding outer edge
+  會留下持續型AoE，站在裡面會附加大量出血
+  「殘殺」－以玩家為中心、無法迴避的指定目標直線AoE，會造成強力擊退，請避開外圍的AoE
 5437: |
-  Double autos
-  Gaze inflicts heavy damage and Blind
-5436: Double autos
-5433: Double autos that lifesteal
+  連續兩次平砍
+  凝視攻擊造成大量傷害並附加失明
+5436: 連續兩次平砍
+5433: 連續兩次會吸血的平砍
 5431: |
-  "Ice Spikes" reflects damage
-  "Void Blizzard" inflicts Slow
-5430: Inflicts Vuln Up debuff
+  「冰棘屏障」會反彈傷害
+  「虛空暴雪」附加緩速
+5430: 附加易傷狀態
 5429: |
-  Double autos
-  Gaze inflicts Paralysis
+  連續兩次平砍
+  凝視攻擊附加麻痺

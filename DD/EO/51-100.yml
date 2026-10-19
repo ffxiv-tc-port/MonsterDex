@@ -129,6 +129,12 @@
   InstanceContentType: DeepDungeon
   Threat: Easy
   Aggro: Sight
+  Weakness:
+    - Stun
+    - HeavyUnknown
+    - SlowUnknown
+    - BindUnknown
+    - SleepUnknown
 12191-Orthos matamata:
   InstanceContentType: DeepDungeon
   Threat: Easy
@@ -145,10 +151,22 @@
   InstanceContentType: DeepDungeon
   Threat: Easy
   Aggro: Sight
+  Weakness:
+    - Stun
+    - HeavyUnknown
+    - SlowUnknown
+    - BindUnknown
+    - SleepUnknown
 12185-Orthos drake:
   InstanceContentType: DeepDungeon
   Threat: Caution
   Aggro: Sight
+  Weakness:
+    - Stun
+    - HeavyUnknown
+    - SlowUnknown
+    - BindUnknown
+    - SleepUnknown
 12194-Orthos gowrow:
   InstanceContentType: DeepDungeon
   Threat: Dangerous
@@ -506,10 +524,7 @@
   Threat: Caution
   Aggro: Sight
   Weakness:
-    - Stun
-    - Heavy
     - Slow
-    - Bind
 12235-Orthos Durga:
   InstanceContentType: DeepDungeon
   Threat: Caution

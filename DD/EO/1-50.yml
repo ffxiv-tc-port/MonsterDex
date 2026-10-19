@@ -271,7 +271,6 @@
   Threat: Caution
   Aggro: Sight
   Weakness:
-    - Stun
     - Slow
 12134-orthodroid:
   InstanceContentType: DeepDungeon
@@ -407,7 +406,10 @@
   Threat: Easy
   Aggro: Sight
   Weakness:
+    - Stun
+    - HeavyUnknown
     - Slow
+    - SleepUnknown
 12150-orthotaur:
   InstanceContentType: DeepDungeon
   Threat: Caution

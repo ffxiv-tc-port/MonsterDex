@@ -1,85 +1,85 @@
-5479: Caster, break line of sight to evade auto-attacks
-4975: Casts Haste on itself
-4977: Absorbs health with each attack
-4979: AoE "Shriek" inflicts Stun
-4980: Inflicts Poison
-4981: Soft-enrage "Final Sting", break line of sight to evade
-4982: Inflicts Vulnerability Up
-4983: AoE "Slumber Breath" inflicts Sleep
-4985: Mini buster "Rhino Attack", break line of sight to evade
+5479: 法系怪，可用地形阻隔視線迴避平砍
+4975: 為自身施放急速強化
+4977: 每次攻擊都會吸血
+4979: AoE「驚叫」附加暈眩
+4980: 附加中毒
+4981: 軟暴走技「最終刺針」，可用地形阻隔視線迴避
+4982: 附加易傷
+4983: AoE「催眠吐息」附加睡眠
+4985: 小型死刑技「犀牛攻擊」，可用地形阻隔視線迴避
 4986: |
-  1) "Whipcrack" - light tankbuster
-  2) "Stormwind" - conal AoE
-  3) "Bombination" - circular AoE on boss inflicts Slow
-  4) "Lumisphere" - targeted AoE on random player
-  5) "Aeroblast" - room wide AoE inflicts Windburn (15s DoT)
-4988: Inflicts Poison
+  1) 「爆裂尾」－輕型死刑技
+  2) 「風暴」－扇形AoE
+  3) 「雜音」－以王為中心的圓形AoE，附加緩速
+  4) 「光球」－對隨機玩家施放的指定目標AoE
+  5) 「暴風爆」－全場AoE，附加持續15秒的風灼傷（持續傷害）
+4988: 附加中毒
 4989: |
-  "Sticky Tongue" draw-in a player, inflicting Stun if not facing the monster
-  "Labored Leap" AoE is immediately casted after, inflicts substantial damage
+  「滑舌」會吸引拉近一名玩家，若未面向牠會附加暈眩
+  之後會立即施放「吃力跳躍」AoE，造成大量傷害
 4990: |
-  Can ENRAGE with "Rupture" and wipe the whole team if not killed in time
-  Absorbs health with each attack
-4993: Casts instant Untelegraphed AoE which inflicts Slow
-4994: Inflicts Poison
+  若未及時擊殺，可能以「炸裂」暴走並團滅
+  每次攻擊都會吸血
+4993: 施放瞬發無預警AoE，附加緩速
+4994: 附加中毒
 4995: |
-  "Bad Breath" AoE inflicts multiple debuffs if not evaded
+  若未閃避，「臭氣」AoE會附加多種異常狀態
 4996: |
-  Caster, break line of sight to evade auto-attacks
-  Buffs own damage with "Golden Tongue"
+  法系怪，可用地形阻隔視線迴避平砍
+  以「金口舌」強化自身傷害
 4997: |
-  INSTANTLY KILLS players inflicted with Toad using "Devour"
-  Gaze attack inflicts Petrify, do not target while casted to evade
+  會用「捕食」秒殺處於青蛙化狀態的玩家
+  凝視攻擊附加石化，發動時不要鎖定牠以便迴避
 4999: |
-  1) "Bloody Caress" - high damage cleave
-  2) Two telegraphed AoEs and a room wide AoE
-  3) Summons two Palace Hornets that must be killed before they casts "Final Sting"
-  4) "Rotten Stench" - high damage line AoE
+  1) 「血之愛撫」－高傷害範圍斬擊
+  2) 兩個有預警的AoE與一個全場AoE
+  3) 召喚兩隻「地宮大黃蜂」，必須在牠們施放「終結刺針」前擊殺
+  4) 「腐臭」－高傷害直線AoE
 5001: |
-  Casts "Smoldering Scales" applying "Blaze Spikes" to self.
-  "Blaze Spikes" inflicts fire damage upon melee attacks.
-5003: Gaze attack inflicts Petrify, do not target while casted to evade
-5004: High auto-attack damage
+  施放「火鱗甲」為自身附加「火棘屏障」。
+  「火棘屏障」會在被近戰攻擊時造成火焰傷害。
+5003: 凝視攻擊附加石化，發動時不要鎖定牠以便迴避
+5004: 平砍傷害很高
 5005: |
-  Caster, break line of sight to evade auto-attacks
-  Casts Haste on itself
-5006: Casts Physical Damage Up on itself
-5007: Can knockback player
-5010: Untelegraphed AoE "111-Tonze Swing" does moderate damage and knockback
+  法系怪，可用地形阻隔視線迴避平砍
+  為自身施放急速強化
+5006: 為自身施放物理傷害提升
+5007: 可能會將玩家擊退
+5010: 無預警AoE「111噸迴轉」造成中等傷害並擊退
 5011: |
-  "Chirp" inflicts Sleep for 15s
+  「嘰嘰喳喳」附加持續15秒的睡眠
 5012: |
-  1) Spread out Fire and Ice AoEs on arena borders
-  2) After the fourth AoE, run to the center of the arena alongside the boss
-  2) Get inside boss's hit box before "Fear Itself" is casted, or it will inflict high damage and Terror
-5014: Inflicts Paralysis if caught in AoE
-5016: Inflicts Stun if caught in AoE
-5017: Caster, break line of sight to evade auto-attacks
+  1) 在場地邊緣分散施放火與冰AoE
+  2) 第四個AoE結束後，跟著王一起跑到場地中央
+  2) 在「恐懼迷霧」發動前進入王的判定範圍內，否則會受到高額傷害並附加恐懼
+5014: 若被AoE命中會附加麻痺
+5016: 若被AoE命中會附加暈眩
+5017: 法系怪，可用地形阻隔視線迴避平砍
 5019: |
-  Draws-in near players and then casts an AoE
-  Caster, break line of sight to evade auto-attacks
-5020: Caster, break line of sight to evade auto-attacks
+  吸引附近的玩家，接著施放AoE
+  法系怪，可用地形阻隔視線迴避平砍
+5020: 法系怪，可用地形阻隔視線迴避平砍
 5022: |
-  Casts "Dark Mist" AoE, which inflicts Terror
-  "Void Fire II" AoE is subsequently casted to inflict high damage to stunned players
-5023: Gaze attack inflicts Petrify
+  施放附加恐懼的AoE「暗黑霧」
+  接著施放AoE「虛空・中火焰」，對處於暈眩狀態的玩家造成高額傷害
+5023: 凝視攻擊附加石化
 5025: |
-  1) Summons four lingering AoEs followed by AoEs which inflicts Disease
-  2) Summons two Nightmare Bhoots, they must be killed before the boss next attack
-  3) Casts "Scream", and adds will use "Tornado", a high damage AoE, if still alive
-  4) Casts "Shadow Flare" global AoE, which inflicts Terror - heal or use damage reduction skills before this attack
-5026: Ranged auto-attack, non interruptable
-5029: Casts Physical Damage Up on itself
-5030: Inflicts Paralysis
-5032: Inflicts Paralysis
-5036: Wide AoE which inflicts Terror
+  1) 召喚四個持續型AoE，接著施放附加疾病狀態的AoE
+  2) 召喚兩隻「惡夢魍魎」，必須在王下次攻擊前擊殺
+  3) 施放「尖叫」，若小怪仍存活會使用高傷害AoE「龍捲風」
+  4) 施放附加恐懼的全域AoE「暗影核爆」－請在此攻擊前先治療或使用減傷技能
+5026: 遠程平砍，無法打斷
+5029: 為自身施放物理傷害提升
+5030: 附加麻痺
+5032: 附加麻痺
+5036: 附加恐懼的大範圍AoE
 5037: |
-  High physical damage
-  "Nail in the Coffin" does a lot of damage
+  物理傷害很高
+  「活埋」會造成大量傷害
 5038: |
-  FOLLOW MECHANICS -- evade all AoEs and Gazes
-  Failed mechanics will increase Black Honeymoon room AoE (3+ stacks is a near wipe)
-  1) "Cold Feet" -- Gaze
-  2) "In Health" -- can be room wide AoE with safe spot on boss or targeted AoE under boss
-  3) "In Sickness" -- instantly inflicts Disease on a player
-  4) Black Honeymoon
+  請遵循機制指示－迴避所有AoE與凝視攻擊
+  機制失敗會提升「黑色蜜月」全場AoE的傷害（疊到3層以上幾乎團滅）
+  1) 「膽怯」－凝視攻擊
+  2) 「健康」－可能是有安全點在王身上的全場AoE，或是王腳下的指定目標AoE
+  3) 「疾病」－立即對一名玩家附加疾病狀態
+  4) 黑色蜜月

@@ -1,18 +1,18 @@
-5356: Summons adds and does large targeted AoEs -- adds are vulnerable to Pomander of Resolution's attacks
+5356: 召喚小怪並施放大範圍指定目標AoE－小怪對「魔陶器：覺悟」的攻擊較脆弱
 5345: |
-  Casts large AoEs
-  Summons "Grey Bomb" - must be killed before it does high room wide damage
-  Begins long cast "Massive Burst" and summons "Giddy Bomb" that must be knocked towards the boss to interrupt cast
-5334: Casts wide "Self Destruct" if not killed in time
+  施放大範圍AoE
+  召喚「灰色炸彈」－必須在牠造成高額全場傷害前擊殺
+  開始詠唱長條「特大爆炸」，並召喚「暈眩炸彈」，必須將其擊退到王身上才能打斷詠唱
+5334: 若未及時擊殺，會施放大範圍「自爆」
 5333: |
-  "Charybdis" -- lingering ground tornadoes that cause high damage if sucked into
-  Boss will run to edge of arena and cast "Trounce" - wide conal AoE
-  At 17%% casts "Ecliptic Meteor" - HIGH DAMAGE room wide with long cast that deals 80%% of total health damage
+  「大漩渦」－持續型地面龍捲風，被吸入會造成高額傷害
+  王會跑到場地邊緣，施放「呵斥」－大範圍扇形AoE
+  血量17%時會施放「黃道隕石」－詠唱時間很長的高傷害全場AoE，造成總血量80%的傷害
 5321: |
-  "Douse" -- lingering ground AoE that inflicts Bleed if stood in and buffs boss with Haste if left in it
-  Occasionally casts targeted ground AoEs
+  「潑灑」－持續型地面AoE，站在裡面會附加出血，若不清除還會讓王獲得急速強化
+  偶爾會施放指定目標地面AoE
 5309: |
-  Drops large puddle AoEs that inflict Bleed if stood in
-  "Valfodr" -- targeted unavoidable line AoE centered on player that causes strong knockback, avoid AoEs surrounding outer edge
-5308: Gaze inflicts Blind and does high damage
-5299: Gaze inflicts Paralysis
+  會留下大範圍水坑AoE，站在裡面會附加出血
+  「殘殺」－以玩家為中心、無法迴避的指定目標直線AoE，會造成強力擊退，請避開外圍的AoE
+5308: 凝視攻擊附加失明並造成高額傷害
+5299: 凝視攻擊附加麻痺

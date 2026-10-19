@@ -3,6 +3,11 @@
   InstanceContentType: DeepDungeon
   Threat: Easy
   Aggro: Proximity
+  Weakness:
+    - StunUnknown
+    - SleepUnknown
+    - SlowUnknown
+    - UndeadUnknown
 5046-Duskwight lancer:
   InstanceContentType: DeepDungeon
   Threat: Caution
@@ -129,6 +134,10 @@
   InstanceContentType: DeepDungeon
   Threat: Caution
   Aggro: Proximity
+  Weakness:
+    - SleepUnknown
+    - SlowUnknown
+    - UndeadUnknown
 
 # HoH special NPCs and misc.
 

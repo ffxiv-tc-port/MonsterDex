@@ -1,59 +1,59 @@
 12109: |
-  Casts Ecliptic Meteor at 40%, can LoS
-12110: Casts untelegraphed PB AoE
-12116: Casts disease
+  血量40%時會詠唱「黃道隕石」，可用地形阻隔視線迴避
+12110: 施放無預警的自身周圍AoE
+12116: 會施放疾病狀態
 12132: |
-  Casts Self-detonate at 30%, can LoS
+  血量30%時會自爆，可用地形阻隔視線迴避
 12240: |
-  Steel recommended for solo
+  單人挑戰建議使用「魔陶器：強化防禦」
 12133: |
-  Late telegraphed draw-in into AoE
-  KB immunity works
-12141: Casts roomwide vuln stacking AoE unaggroed
+  延遲預警的吸引拉近後接AoE
+  擊退無效有效
+12141: 沒有仇恨也會施放附加疊加型易傷的全場AoE
 12242: |
-  1) "Dark Wyrmtail" -- cleaves middle
-  2) "Dark Wyrmwing" -- cleaves sides
-  3) "Whei Morn" -- multiple baited AoEs
+  1) 「暗黑之尾」－從中間開始的範圍斬擊
+  2) 「暗黑之翼」－從兩側開始的範圍斬擊
+  3) 「死亡待期」－多重誘導型AoE
 12149: |
-  Casts inflicts Stun
-12146: PB AoE
+  施放附加暈眩的攻擊
+12146: 自身周圍AoE
 12154: |
-  Buffs enemies with double damage
-12147: Casts Haste
+  強化敵人使其傷害翻倍
+12147: 施放急速強化
 12150: |
-  "100 Tonze Swing" -- PB AoE
-  "11 Tonze Swipe" -- Close Conal AoE
+  「100噸迴轉」－自身周圍AoE
+  「11噸橫掃」－近距離扇形AoE
 12148: |
-  "Forearming" -- Half Circle AoE
-  "Atmospheric Displacement" -- PB AoE
+  「前方劍閃」－半圓形AoE
+  「劍風」－自身周圍AoE
 12152: |
-  "The Dragon's Voice" - doughnut
-  "The Ram's Voice" - PB AoE
+  「雷電咆哮」－甜甜圈AoE
+  「冰凍咆哮」－自身周圍AoE
 12156: |
-  "Nothing personal kid"
+  「Nothing personal kid」
 12263: |
-  1) "Twister" -- Move away from twister bait
-  2) "Twisting Dive" -- Cleave down middle with twister bait
-  3) "Meracydian Cyclone" -- Spawns tornados with 4 baits into KB.
-12160: Quick behind cleave
-12169: Casts stacking slow
-12159: Casts Haste
+  1) 「旋風」－遠離龍捲風的誘導點
+  2) 「旋風衝」－從中間開始的範圍斬擊並帶有龍捲風誘導
+  3) 「美拉西迪亞旋風」－召喚4個帶有誘導的龍捲風並附帶擊退
+12160: 快速的背後範圍斬擊
+12169: 施放疊加型緩速
+12159: 施放急速強化
 12166: |
-  Casts roomwide aoe, interruptable
+  施放全場AoE，可被打斷
 12162: |
-  PB AoE after dash, can LoS
+  衝刺後施放自身周圍AoE，可用地形阻隔視線迴避
 12168: |
-  Fast untelegraphed conal after suck in
+  吸入後接快速無預警扇形AoE
 12158: |
-  Casts Explosion at 30%, can LoS
+  血量30%時會施放爆炸，可用地形阻隔視線迴避
 12164: |
-  "Abyssal Cry" - Large AoE that stuns, can LoS
-12170: Applies potent heavy
-12163: Casts roomwide vuln stacking AoE unaggroed
+  「深淵嚎」－會造成暈眩的大範圍AoE，可用地形阻隔視線迴避
+12170: 附加強力的沉重狀態
+12163: 沒有仇恨也會施放附加疊加型易傷的全場AoE
 12265: |
-  1) "Song of Thunder and Ice" -- doughnut then PB AoE
-  2) "Song of Ice and Thunder" -- PB AoE then doughnut
-  3) "Cold Thunder" -- proximity dash, PB AoE then doughnut
-  4) "Thunderous Cold" -- proximity dash, doughnut then PB AoE
-  5) "Leftbreathed/Rightbreathed" -- halfroom cleave
-  6) "Cacophony" -- ball tether, kite away
+  1) 「雷與冰之歌」－甜甜圈AoE接自身周圍AoE
+  2) 「冰與雷之歌」－自身周圍AoE接甜甜圈AoE
+  3) 「冰雷襲」－近身衝刺，自身周圍AoE接甜甜圈AoE
+  4) 「雷冰襲」－近身衝刺，甜甜圈AoE接自身周圍AoE
+  5) 「Leftbreathed／Rightbreathed」－半場範圍斬擊
+  6) 「嘈雜的噪音」－球狀連結線，需拉開距離

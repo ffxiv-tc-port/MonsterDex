@@ -1,66 +1,66 @@
 # Floor 10 Boss
 13979: |
-  1) "Hedge Mazing" -- Three large AoEs where the pink shadows end up. Spawns three adds.
-  2) "Leafmash" -- Four large AoEs where the boss telegraphs. On each jump, any alive adds will stun and deal massive damage.
+  1) 「樹籬謎陣」－粉紅色殘影最終落點會出現三個大範圍AoE，並召喚三隻小怪。
+  2) 「碎葉」－王的預警處會出現四個大範圍AoE。每次跳躍時，存活的小怪都會造成暈眩並施放巨額傷害。
 13980: |
-  Deals heavy damage when boss jumps during Leafmash.
+  王在「碎葉」跳躍時會造成大量傷害。
 # Floor 20 Boss
 13973: |
-  1) "Touchdown" -- Knockback into four AoEs indicated by the glowing legs.
-  2) "Rare Root Planting" -- Baits expanding star AoE. Place at the wall.
+  1) 「空降」－擊退後，發光的腳會指示出四個AoE。
+  2) 「植根」－誘導型擴散星形AoE，請誘導到牆邊。
 # Floors 21-29
 14137: |
-  Casts "Parasitism" enrage at 25% HP
+  血量25%時會施放暴走技「捕食行動」
 14127: |
-  Casts baited AoE unaggroed
+  沒有仇恨也會施放誘導型AoE
 14138: |
-  "Swinge" -- Large point-blank AoE late telegraph
+  「重擊」－延遲預警的大範圍自身周圍AoE
 14130: |
-  "Ripper Claw" -- Untelegraphed front conal AoE
+  「撕裂利爪」－無預警的正面扇形AoE
 # Floor 30 Boss
 13863: |
-  1) "Liturgy of Light" -- drops falling ring AoEs in 4 possible locations
-  2) "Grip of Salvation" -- halfroom cleave on side of glowing arm, then cleaves other half + an additional 45 degrees in front of him
-  3) "Divine Favor" -- 8 baited chasing AoEs
+  1) 「光之連禱」－會在4個可能位置落下環形AoE
+  2) 「救贖之握」－先對發光手臂那一側施放半場範圍斬擊，接著施放另一半外加正面額外45度的範圍斬擊
+  3) 「神之寵愛」－8個會追逐玩家的誘導型AoE
 # Floors 31-39
 14151: |
-  "Gallop" -- Far KB, can LoS
-  "Nicker" -- PB AoE
+  「飛馳」－遠距離擊退，可用地形阻隔視線迴避
+  「天馬嘶嘯」－自身周圍AoE
 14146: |
-  Casts baited AoE unaggroed
+  沒有仇恨也會施放誘導型AoE
 14141: |
-  Casts "Unto Dust" enrage at 25% HP
+  血量25%時會施放暴走技「歸於塵土」
 14144: |
-  "Wooden Horse" -- large roomwide conal
+  「木馬」－大範圍全場扇形AoE
 14139: |
-  "Hand of Judgment" -- knockback at melee range
-  "Moatmaker" -- Baited AoE. Hits again but larger.
+  「審判之手」－近戰距離擊退
+  「掘壕者」－誘導型AoE，會再次發動且範圍更大
 14145: |
-  "Left/Right Tentacle" -- halfroom cleave
+  「左／右觸手」－半場範圍斬擊
 # Floor 40 Boss
 13977: |
-  1) "Blown Blessing" -- either a massive AoEs (yellow/sparkles) or KBs (blue/water). The boss will always do theirs first, followed by the adds in the order they jump.
-  2) "Near Tide" -- massive PB AoE
-  3) "Far Tide" -- doughnut, be directly under the boss
-  4) Forgiven Adulations (adds) will eventually cast "Self Destruct" enrage
+  1) 「祝福綻放」－黃色（閃光）為巨大AoE，藍色（水）為擊退。王一定會先發動，接著依小怪跳躍順序施放。
+  2) 「近潮」－巨大自身周圍AoE
+  3) 「遠潮」－甜甜圈AoE，需站在王正下方
+  4) 小怪「被寬恕的諂媚者」最終會施放暴走技「自我了斷」
 13978: |
-  "Self Destruct" -- enrage cast
+  「自爆」－暴走施放
 # Floors 41-49
 14153: |
-  Incredibly dangerous autoattack damage
-  "Tortoise Stomp" -- PB AoE
+  平砍傷害極度危險
+  「龜足踏」－自身周圍AoE
 14155: |
-  "Creeping Combination" -- frontal cone telegraph followed by untelegraphed backwards cone
+  「潛行連擊」－有預警的正面扇形，接著無預警的背後扇形
 14158: |
-  "One-Two Charge" -- line dash telegraph, followed by return dash
+  「一二衝鋒」－有預警的直線衝刺，接著折返衝刺
 14152: |
-  "Magnetic Shock" -- Suck
-  "Plaincracker" -- PB AoE
+  「磁力衝擊」－吸引
+  「平原震裂」－自身周圍AoE
 14161: |
-  "Smite of Range" -- Small front line AoE
-  "Whirl of Range" -- Point blank AoE
+  「懲戒射線」－小範圍正面直線AoE
+  「旋轉射線」－自身周圍AoE
 # Floor 50 Boss
 14263: |
-  1) "Liquefaction" -- Turns the arena into a quicksand with a few safe spots. Spending 4 seconds in the quicksand will result in death.
-  2) "Sandpit" -- Boss goes untargetable and does 4 large chasing AoE baits.
-  3) "Windraiser" -- Places a wind tornado in the middle, will KB if not in the quicksand when it resolves.
+  1) 「地面液化」－將場地變為流沙，僅有少數安全點。停留在流沙中4秒會死亡。
+  2) 「進沙坑」－王會進入無法鎖定狀態，並施放4個追逐型誘導大範圍AoE。
+  3) 「捲風者」－在場地中央放置龍捲風，發動時若不在流沙中會被擊退。

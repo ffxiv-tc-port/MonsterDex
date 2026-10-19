@@ -1,65 +1,65 @@
 5424: |
-  Summons adds
-  "Fanatic Zombie" will grab player and root in place until killed
-  "Fanatic Succubus" will heal boss if it reaches it
-5423: Very high damage for the floors it appears on
-5422: High health and very large AoE "Scream"
-5421: Buffs own damage, untelegraphed high damage "Ripper Claw" - can be avoided by walking behind
-5420: Casts Gaze "Evil Eye"
+  召喚小怪
+  「狂熱殭屍」會抓住玩家並使其定身，直到被擊殺為止
+  「狂熱魅魔」若接觸到王會為其治療
+5423: 相對於出現樓層而言，傷害非常高
+5422: 血量很高，並有超大範圍AoE「尖嘯」
+5421: 強化自身傷害，無預警高傷害「撕裂利爪」－可繞到背後迴避
+5420: 施放凝視攻擊「邪視」
 5415: |
-  Floors 141-150:
-  Nothing notable (ignore threat level)
-  Floors 191-200:
-  Casts large doughnut AoE "Death Spiral" that deals heavy damage
-  Has soft enrage of a strong damage buff
-5414: Very high damage, inflicts Poison
+  141~150層：
+  沒有特別需要注意的（可忽略威脅等級）
+  191~200層：
+  施放造成大量傷害的大範圍甜甜圈AoE「死亡螺旋」
+  有強力傷害強化的軟暴走
+5414: 傷害非常高，附加中毒
 5413: |
-  "Charybdis" - semi-enrage that drops party health to 1%
+  「大漩渦」－半暴走技，會把全隊血量降到1%
 5410: |
-  1) Summons four lingering AoEs
-  2) Summons two adds -- they must be killed before boss casts "Scream", adds will target player with high damage AoEs if not dead
+  1) 召喚四個持續型AoE
+  2) 召喚兩隻小怪－必須在王施放「尖嘯」前擊殺，否則小怪會對玩家施放高傷害AoE
 5409: |
-  Floors 131-140:
-  Nothing notable (ignore threat level)
-  Floors 191-200:
-  Double autos
-5406: Casts targeted AoE that inflicts Bleed
-5402: Untelegraphed conal AoE "Level 5 Petrify" inflicts Petrify
+  131~140層：
+  沒有特別需要注意的（可忽略威脅等級）
+  191~200層：
+  連續兩次平砍
+5406: 施放附加出血的指定目標AoE
+5402: 無預警扇形AoE「5級石化」附加石化
 5397: |
-  1) Spread out fire and ice AOEs and don't drop them in center because:
-  2) Get inside boss's hit box for fast cast "Fear Itself" - will inflict high damage and Terror if not avoided
+  1) 分散施放火與冰AoE，不要放在中央，原因如下：
+  2) 需進入王的判定範圍內以應對快速詠唱的「恐懼迷霧」－若未迴避會造成高額傷害並附加恐懼
 5396: |
-  "Chirp" inflicts Sleep for 15s
+  「嘰嘰喳喳」附加持續15秒的睡眠
 5395: |
-  "11-Tonze Swing" - point-blank untelegraphed AoE that does high damage and knockback
-5389: Double autos
+  「11 Tonze 揮擊」－無預警自身周圍AoE，造成高額傷害並擊退
+5389: 連續兩次平砍
 5384: |
-  1) "Bloody Caress" - high damage cleave
-  2) Two telegraphed AOEs and a room wide AOE
-  3) Summons two hornets that must be killed before they "Final Sting"
-  4) "Rotten Stench" - high damage line AOE
+  1) 「血腥的愛撫」－高傷害範圍斬擊
+  2) 兩個有預警的AoE與一個全場AoE
+  3) 召喚兩隻大黃蜂，必須在牠們施放「最終刺針」前擊殺
+  4) 「腐爛惡臭」－高傷害直線AoE
 5382: |
-  Gaze attack inflicts Petrify, "Regorge" inflicts Poison
-  Will one-shot kill anyone inflicted with Toad
-5381: Buffs own damage
-5380: Will inflict Sleep before casting "Bad Breath"
-5378: Area of effect Slow
-5377: Casts invuln buff on itself
-5375: Eventual ENRAGE
+  凝視攻擊附加石化，「噴毒」附加中毒
+  會秒殺處於青蛙化狀態的任何人
+5381: 強化自身傷害
+5380: 施放「臭氣」前會先附加睡眠
+5378: 範圍緩速
+5377: 為自身施放無敵狀態
+5375: 最終會暴走
 5374: |
-  "Sticky Tongue" draw-in and stun attack if not facing, followed by "Labored Leap" AoE centered on enemy
+  「滑舌」會吸引拉近，若未面向牠會附加暈眩，接著施放以牠為中心的「吃力跳躍」AoE
 5371: |
-  1) "Whipcrack" - light tankbuster
-  2) "Stormwind" - conal AOE
-  3) "Bombination" - circular AOE on boss inflicts Slow
-  4) "Lumisphere" - targeted AOE on random player
-  5) "Aeroblast" - room wide AOE inflicts Bleed
-5370: Mini buster "Rhino Charge"
-5367: Inflicts vulnerability up
-5366: High damage "Final Sting"
-5365: Inflicts Poison
+  1) 「爆裂尾」－輕型死刑技
+  2) 「風暴」－扇形AoE
+  3) 「雜音」－以王為中心的圓形AoE，附加緩速
+  4) 「光球」－對隨機玩家施放的指定目標AoE
+  5) 「暴風爆」－全場AoE，附加出血
+5370: 小型死刑技「犀牛衝鋒」
+5367: 附加易傷
+5366: 高傷害「最終刺針」
+5365: 附加中毒
 5364: |
-  Floors 101-110:
-  Nothing notable (ignore threat level)
-  Floors 191-200:
-  Double autos
+  101~110層：
+  沒有特別需要注意的（可忽略威脅等級）
+  191~200層：
+  連續兩次平砍

@@ -1,142 +1,142 @@
-7610: Does not interact, wide stun and immediately dies when attacked
+7610: 不會主動攻擊，範圍暈眩後只要被攻擊就會立刻死亡
 7584: |
-  Permanent stacking damage buff
-  Massive enrage on random player"Allagan Meteor"
-  Gaze attack
+  永久疊加的傷害強化
+  對隨機一名玩家施放巨大傷害的暴走技「亞拉戈隕石」
+  凝視攻擊
 7493: |
-  1) Heavy room wide damage "Ancient Quaga"
-  2) Pulsing rocks appear over arena, causing moderate damage and Heavy debuff if player is hit by one
-  3) "Meteor Impact" summons proximity AoE at boss's current location
-  4) Line AoE "Aura Cannon"
-  5) Targeted circle AoE "Burning Rave"
-  6) Point-blank circle AoE "Knuckle Press"
-  7) Repeat
+  1) 全場高傷害的「古代大地槌」
+  2) 場地上出現脈動落石，命中玩家會造成中等傷害並附加沉重狀態
+  3) 「隕石衝擊」會在王目前所在位置召喚近身AoE
+  4) 直線AoE「鬥氣砲」
+  5) 指定目標圓形AoE「燃燒咆哮」
+  6) 自身周圍圓形AoE「指壓」
+  7) 重複循環
 7490: |
-  1) Summons balls of ice
-  2) Summons icicle that pierces through room, detonating any ice balls it hits
-  3) "Lunar Cry" detonates remaining ice balls
-  4) Exploding ice balls inflict Deep Freeze if they hit a player
-  5) Boss jumps to random player, instantly killing if player is frozen (light damage otherwise)
+  1) 召喚冰球
+  2) 召喚貫穿全場的冰柱，命中冰球時會使其爆炸
+  3) 「月下咆哮」會引爆剩餘的冰球
+  4) 冰球爆炸命中玩家會附加深度冰凍
+  5) 王會跳向隨機一名玩家，若該玩家處於冰凍狀態則秒殺，否則只造成輕微傷害
 7489: |
-  1) Untelegraphed frontal cleave
-  2) Targets random player with "Innerspace" puddle (standing in puddle inflicts Minimum)
-  3) Targets random player with "Hound out of Hell"
-  4) Targeted player must stand in puddle to dodge "Hound out of Hell" and "Devour" (will instant-kill if not in puddle and give the boss a stack of damage up)
-  5) Repeat
+  1) 無預警的正面範圍斬擊
+  2) 對隨機玩家施放「縮小球」水坑（站在水坑內會附加縮小狀態）
+  3) 對隨機玩家施放「地獄衝」
+  4) 被指定的玩家必須站在水坑內才能閃避「地獄衝」與「捕食」（若不在水坑內會被秒殺，並讓王疊加一層傷害提升）
+  5) 重複循環
 7487: |
-  Summons staffs that do various AoEs
-  Staffs then do line AoEs targeting players
-  Room wide AoE
+  召喚法杖，施放各種AoE
+  法杖接著會對玩家施放直線AoE
+  全場AoE
 7485: |
-  1) Untelegraphed swipe
-  2) Untelegraphed line AoE on random player
-  3) Gaze mechanic that inflicts Fear
-  4) Summons pulsating bombs over arena and does a proximity AoE
-  5) Repeats after bombs explode for the last time
+  1) 無預警的揮擊
+  2) 對隨機玩家施放無預警的直線AoE
+  3) 附加恐懼狀態的凝視機制
+  4) 在場地上召喚脈動炸彈，並施放近身AoE
+  5) 炸彈最後一次爆炸後重複循環
 7483: |
-  Summons clouds on edge of arena
-  Does to-wall knockback that ignores knockback invuln (look for safe spot in clouds!)
-  Follows immediately with targeted line AoE
+  在場地邊緣召喚雲朵
+  施放無視擊退無效的貼牆擊退（記得在雲朵中找安全點！）
+  緊接著施放指定目標的直線AoE
 7481: |
-  Summons butterflies on edges of arena
-  Does gaze mechanic that inflicts Fear
-  Butterflies explode untelegraphed
+  在場地邊緣召喚蝴蝶
+  施放附加恐懼狀態的凝視機制
+  蝴蝶會無預警爆炸
 7480: |
-  Goes to center of arena and casts knockback to wall (cannot be knockback invulned)
-  Follows immediately with a half-room wide AoE
+  移動到場地中央並施放貼牆擊退（無法用擊退無效抵擋）
+  緊接著施放半場範圍AoE
 7478: |
-  Summons lightning clouds that inflict stacking vuln up when they explode
-  Boss does proximity AoE under itself that knocks players into the air
-  Get knocked into a cloud to dispel it and avoid vuln
-  Half-room wide AoE
+  召喚雷雲，爆炸時會附加疊加型易傷
+  王會在自身周圍施放近身AoE，並將玩家擊飛到空中
+  被擊飛進雷雲可以消除雷雲並避免易傷
+  半場範圍AoE
 7394: |
-  Floors 61+: Gold chests only
-  High damage autos and instant kill AoE
-  "Malice" can only be interrupted with interject
-  CANNOT STUN
+  61層以上：只會出現在黃金寶箱
+  高傷害平砍與秒殺AoE
+  「怨念」只能用打斷技打斷
+  無法暈眩
 7393: |
-  Floors 31-60: Silver chests only
-  High damage autos and instant kill AoE
-  "Malice" can be interrupted with silence/stun/interject
+  31~60層：只會出現在白銀寶箱
+  高傷害平砍與秒殺AoE
+  「怨念」可用沉默／暈眩／打斷技打斷
 7392: |
-  Floors 1-30: Bronze chests only
-  High damage autos and instant kill AoE
-  "Malice" can be interrupted with silence/stun/knockback/witching/
-  interject
-7391: Double autos, cone AoE inflicts Sleep
-7390: Rapid double autos and untelegraphed line AoE "Quasar"
-7389: Repeatedly cleaves for high damage, lifesteal, buffs own damage, three stacks of damage up casts ENRAGE "Black Nebula"
+  1~30層：只會出現在青銅寶箱
+  高傷害平砍與秒殺AoE
+  「怨念」可用沉默／暈眩／擊退／魔陶器：形態變化／
+  打斷技打斷
+7391: 連續兩次平砍，扇形AoE附加睡眠
+7390: 快速連續兩次平砍，以及無預警直線AoE「類星體」
+7389: 反覆施放高傷害斬擊並吸血，強化自身傷害，疊滿三層傷害提升後會施放暴走技「暗黑星雲」
 7388: |
-  Charges
-  Untelegraphed cone AoE "Swipe"
-  Untelegraphed wide circle AoE "Swing"
-7387: Deals heavy damage to random players
-7386: Extremely quick line AoE "Death's Door" that instantly kills
-7385: Targeted AoEs, cleaves
-7384: Casts targeted AoEs unaggroed, buffs own defense
+  衝鋒
+  無預警扇形AoE「揮擊」
+  無預警大範圍圓形AoE「橫掃」
+7387: 對隨機玩家造成大量傷害
+7386: 極快速的秒殺直線AoE「葬送擊」
+7385: 指定目標AoE、範圍斬擊
+7384: 沒有仇恨也會施放指定目標AoE，並強化自身防禦
 7382: |
-  "Charybdis" AoE that leaves tornadoes on random players
+  「大漩渦」AoE，會在隨機玩家腳下留下龍捲風
 7381: |
-  Cleave
-  Large line AoE that can be line of sighted
+  範圍斬擊
+  可用地形阻隔視線迴避的大範圍直線AoE
 7380: |
-  WHM: double autos
-  "Stone" can be line of sighted
+  白魔導士：連續兩次平砍
+  「巨岩」可用地形阻隔視線迴避
 7379: |
-  MNK: Haste buff, short invuln
+  武僧：急速強化，短暫無敵
 7378: |
-  WAR: Triple knockback with heavy damage
-  Buffs own attack
-  Extremely high damage cleave with knockback
-7377: Charges, buffs own damage, untelegraphed buster "Ripper Claw"
-7376: Charges, buffs own damage, double autos, electricity Bleed
-7375: Cone AoE, circle AoE, party wide damage
-7374: Large doughnut AoE
-7373: Draw-in attack, tons of bleed, and a stacking poison
-7372: Buffs own damage and double autos
-7371: Alternates line and circle AoEs untelegraphed
-7370: Double autos, very strong rear cleave if behind
-7369: Casts AoEs unaggroed
-7368: Untelegraphed conal AoE on random player, gaze attack
-7367: Charges on aggro
+  戰士：連續三次高傷害擊退
+  強化自身攻擊
+  附帶擊退的超高傷害範圍斬擊
+7377: 衝鋒、強化自身傷害，無預警死刑技「撕裂利爪」
+7376: 衝鋒、強化自身傷害、連續兩次平砍，電擊型出血
+7375: 扇形AoE、圓形AoE、全隊傷害
+7374: 大範圍甜甜圈AoE
+7373: 吸引拉近攻擊、大量出血，以及疊加型中毒
+7372: 強化自身傷害並連續兩次平砍
+7371: 無預警交替施放直線與圓形AoE
+7370: 連續兩次平砍，若站在背後會受到強力的背後範圍斬擊
+7369: 沒有仇恨也會詠唱AoE
+7368: 對隨機玩家施放無預警扇形AoE，並有凝視攻擊
+7367: 進戰鬥後會衝鋒
 7366: |
-  Buffs own damage unaggroed
-  Large AoE unaggroed that inflicts vuln up and stacks
+  沒有仇恨也會強化自身傷害
+  沒有仇恨也會施放附加疊加型易傷的大範圍AoE
 7365: |
-  Ram's Voice - get out
-  Dragon's Voice - get in
-  Telegraphed cleaves
-7364: Double auto and very large AoE
-7362: Extremely large conal AoE, gaze inflicts Fear
-7361: Draw-in attack, extremely large AoE, eventual ENRAGE
-7360: Very large AoEs
-7359: Haste, eventual ENRAGE
-7358: Buffs own damage
+  「公羊之聲」－遠離
+  「巨龍之聲」－靠近
+  有預警的範圍斬擊
+7364: 連續兩次平砍，以及超大範圍AoE
+7362: 超大範圍扇形AoE，凝視攻擊附加恐懼
+7361: 吸引拉近攻擊、超大範圍AoE，最終會暴走
+7360: 超大範圍AoE
+7359: 急速強化，最終會暴走
+7358: 強化自身傷害
 7357: |
-  Casts room wide AoEs unaggroed
-  Large conal draw-in attack followed by heavy damage
-7356: Casts AoEs unaggroed that inflict Deep Freeze
-7355: Double auto inflicts Bleed
-7354: Untelegraphed knockback on rear
+  沒有仇恨也會施放全場AoE
+  大範圍扇形吸引拉近攻擊，接著造成大量傷害
+7356: 沒有仇恨也會施放附加深度冰凍的AoE
+7355: 連續兩次平砍附加出血
+7354: 無預警的背後擊退
 7353: |
-  Casts large AoE unaggroed
-  Extremely large circular AoE
-7350: AoE inflicts numerous debuffs at once
-7349: Buffs own or ally's defense
-7348: Large circular AoE inflicts Bleed
-7347: Large doughnut AoE, gaze attack inflicts Fear
-7346: Cleave and potent Poison
-7345: Conal AoE inflicts Paralysis
-7344: Caster, double auto
-7343: Fast alternating line AoEs that inflict Paralysis
-7341: Inflicts stacking vuln up
-7340: Inflicts stacking Poison that lasts 30s
-7337: Conal gaze, very quick low health ENRAGE
-7336: Instant AoEs on targeted player unaggroed
-7335: Draw-in attack
-7332: Exclusively fatal line AoEs
-7331: Cone AoE inflicts Bleed
-7330: Eventual instant ENRAGE
-7329: Buffs own damage
-7328: Buster inflicts Bleed
-7327: Autos inflict stacking vuln up
+  沒有仇恨也會施放大範圍AoE
+  超大範圍圓形AoE
+7350: AoE會同時附加多種異常狀態
+7349: 強化自身或友軍的防禦
+7348: 大範圍圓形AoE附加出血
+7347: 大範圍甜甜圈AoE，凝視攻擊附加恐懼
+7346: 範圍斬擊，並附加強力中毒
+7345: 扇形AoE附加麻痺
+7344: 法系怪，連續兩次平砍
+7343: 快速交替施放附加麻痺的直線AoE
+7341: 附加疊加型易傷
+7340: 附加持續30秒的疊加型中毒
+7337: 扇形凝視攻擊，血量過低時會很快暴走
+7336: 沒有仇恨也會對指定玩家施放瞬發AoE
+7335: 吸引拉近攻擊
+7332: 直線AoE會直接秒殺
+7331: 扇形AoE附加出血
+7330: 最終會瞬間暴走
+7329: 強化自身傷害
+7328: 死刑技附加出血
+7327: 平砍附加疊加型易傷

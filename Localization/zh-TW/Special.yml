@@ -1,48 +1,48 @@
-5298: Immune to Pomander of Witching
-5297: Immune to Pomander of Witching
-5296: Immune to Pomander of Witching
-5295: Immune to Pomander of Witching
-5294: Immune to Pomander of Witching
-5293: Immune to Pomander of Witching
-5292: Immune to Pomander of Witching
-5291: Immune to Pomander of Witching
-5290: Immune to Pomander of Witching
-5289: Immune to Pomander of Witching
-5288: Immune to Pomander of Witching
-5287: Immune to Pomander of Witching
-5286: Immune to Pomander of Witching
-5285: Immune to Pomander of Witching
-5284: Immune to Pomander of Witching
-5283: Immune to Pomander of Witching
-5053: Immune to Pomander of Witching
+5298: 對「魔陶器：形態變化」免疫
+5297: 對「魔陶器：形態變化」免疫
+5296: 對「魔陶器：形態變化」免疫
+5295: 對「魔陶器：形態變化」免疫
+5294: 對「魔陶器：形態變化」免疫
+5293: 對「魔陶器：形態變化」免疫
+5292: 對「魔陶器：形態變化」免疫
+5291: 對「魔陶器：形態變化」免疫
+5290: 對「魔陶器：形態變化」免疫
+5289: 對「魔陶器：形態變化」免疫
+5288: 對「魔陶器：形態變化」免疫
+5287: 對「魔陶器：形態變化」免疫
+5286: 對「魔陶器：形態變化」免疫
+5285: 對「魔陶器：形態變化」免疫
+5284: 對「魔陶器：形態變化」免疫
+5283: 對「魔陶器：形態變化」免疫
+5053: 對「魔陶器：形態變化」免疫
 5052: |
-  Immune to Pomander of Witching
-  High auto-attack damage
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
 5051: |
-  Immune to Pomander of Witching
-  High auto-attack damage
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
 5050: |
-  Immune to Pomander of Witching
-  High auto-attack damage
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
 5049: |
-  Immune to Pomander of Witching
-  High auto-attack damage
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
 5048: |
-  Immune to Pomander of Witching
-  High auto-attack damage
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
 5047: |
-  Immune to Pomander of Witching
-  High auto-attack damage
-5046: Immune to Pomander of Witching
-5041: Does not interact, wide stun and immediately dies when attacked
+  對「魔陶器：形態變化」免疫
+  平砍傷害很高
+5046: 對「魔陶器：形態變化」免疫
+5041: 不會主動攻擊，範圍暈眩後只要被攻擊就會立刻死亡
 2566: |
-  High damage autos and instant kill AoE
-  "Infatuation" can only be interrupted with interject
+  高傷害平砍與秒殺AoE
+  「迷戀」只能用打斷技打斷
 14262: |
-  "Malice" -- Applies Accursed Pox for 10 minutes, removing OOC and dealing small DoT damage. Interruptable/Stunnable.
+  「惡意」－附加效果持續10分鐘的「詛咒天花」，使你無法進入戰鬥外恢復狀態，並造成小量持續傷害。可被打斷／暈眩。
 14265: |
-  "Malice" -- Applies Accursed Pox for 10 minutes, removing OOC and dealing small DoT damage. Interruptable.
+  「惡意」－附加效果持續10分鐘的「詛咒天花」，使你無法進入戰鬥外恢復狀態，並造成小量持續傷害。可被打斷。
 14266: |
-  "Malice" -- Applies Accursed Pox for 10 minutes, removing OOC and dealing small DoT damage. Interruptable.
+  「惡意」－附加效果持續10分鐘的「詛咒天花」，使你無法進入戰鬥外恢復狀態，並造成小量持續傷害。可被打斷。
 14267: |
-  Dies instantly upon entering combat.
+  進入戰鬥後會立刻死亡。
