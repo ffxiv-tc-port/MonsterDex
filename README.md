@@ -1,32 +1,30 @@
 # MonsterDex
 
-A plugin for [XIVLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) that displays live data for targeted mobs in Final Fantasy XIV's different zones.
+[MonsterDex](https://github.com/wolfcomp/MonsterDex) 的台服移植版（插件庫裡的內部名稱是 `DeepDungeonDex`）。在**死者宮殿**、**天之御柱**、**正統優雷卡**選中魔物時，即時顯示牠的仇恨類型、威脅程度、行動抑制弱點與重要機制說明。
 
-Data is web loaded into the plugin and is curated from multiple sources, the most prominent of which are my own testing, Maygi's resources for [Palace of the Dead](https://docs.google.com/document/d/1oV_SIs5L9kD_NHO2ZsU4Tw8R6iQ4v1RC5fZPQqK6cD8/view) and [Heaven-on-High](https://docs.google.com/document/d/1YVBSTOgJO-xOAB6YyKZEZRikjXFPle6Ihf_E7VdmQnI/view), [Compendium](https://www.ddcompendium.com/), [Angelus' Mimic Appreciation](https://discord.gg/ffxivsolo), and what other resources I stumble over for the various zones.
+## 功能
 
-Plugin is very much a work in progress, with data being incorrect or untested especially for new zones or low volume issues. I am striving to have my plugin be the most accurate resource on monster data there is, so please open a GitHub issue to report suggestions or to add or correct missing or incorrect data!
+- **魔物資訊視窗**：選中深層迷宮的魔物時顯示名稱、仇恨類型（視覺／聽覺／接近／低生命值／魔法感知）、威脅程度（容易／注意／危險／極度危險）、可吃的行動抑制狀態（眩暈、加重、睡眠、束縛、減速；沒有資料的非頭目顯示「不知道」），以及招式與機制備註。
+- **樓層指南**：進入新樓層時顯示該樓層的注意事項（可在設定中關閉）。
+- **設定**：透明度、字型大小、滑鼠穿透、顯示偵錯資訊、介面語言、要在哪些內容類型顯示。
+- **魔物資料**：從本 org 的資料分支下載；下載失敗時改用插件內建的備援資料。
+- **提供給其他插件的 IPC**：`MonsterDex.GetMobVulnerabilities` 依魔物名稱 ID 回傳可吃的行動抑制狀態（NecroLens 用它在怪物名稱後標示弱點）。
 
-### Issues
-If you submit an issue and I request more info and this info is not submitted within a month, the issue will be closed. If there is more info supplied after the issue is closed it might take a little bit before i get back to fixing it.
+## 指令
 
-### Translations
-Translations happens on Crowdin to get access to the translations join the XIVQuickLauncher discord and get the translator role.
+- `/pdex config`（或 `/pdex cfg`）：開啟設定視窗
+- `/pdex refresh`（或 `/pdex clear`）：重新載入魔物資料
+- `/pdex help`：在聊天視窗列出所有子指令
 
-##### Progress
-German:
-![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
+## 台服版的修改
 
-French:
-![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
+- 魔物資料與備援資料改用台服官方的招式與狀態譯名，並同步我方的資料更正。
+- 魔物資料改從本 org 下載（org 轉為私人後仍可取得）。
+- 新增給其他插件查詢弱點的 IPC。
+- 沒有弱點資料的非頭目改顯示「不知道」，不再當成全部不吃。
+- 選到沒有資料的魔物時不再跳出錯誤視窗。
+- 改用 Dalamud 預設字型、不再內嵌字型，安裝包大幅縮小。
+- 多處降低記憶體用量。
+- 介面繁體中文化。
 
-Japanese:
-![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
-
-Korean:
-![ko translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ko&style=flat&query=%24.progress.3.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
-
-Chinese Simplified:
-![zh-CN translation](https://img.shields.io/badge/dynamic/json?color=blue&label=zh-CN&style=flat&query=%24.progress.4.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
-
-Chinese Traditional:
-![zh-TW translation](https://img.shields.io/badge/dynamic/json?color=blue&label=zh-TW&style=flat&query=%24.progress.5.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15354148-526558.json)
+原作者：[WildWolf](https://github.com/wolfcomp/MonsterDex)

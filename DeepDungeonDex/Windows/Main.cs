@@ -17,8 +17,19 @@ public partial class Main : Window, IDisposable
 {
 #pragma warning disable CS8618
     private static Mob _currentMob;
-    private static unsafe BattleChara* _currentNpc;
 #pragma warning restore CS8618
+    // 🔴 不跨幀保存原生指標：GetData（Framework.Update）當下把 Draw 要用的欄位抄成受管理值，Draw 只讀快照。
+    // 目標死亡／消失／切區之後原位址就不再屬於這隻怪，解參考是 AccessViolationException，任何 try/catch 都攔不到。
+    private static uint _currentNpcNameId;
+    private static string _currentNpcName = "";
+    private static byte _currentNpcSubKind;
+    private static uint? _currentNpcForayElement;
+    private static bool _hasCurrentNpc;
+    // 名字字串只由目標的 64 位元組名字欄決定；位元組沒變就沿用上次解出的字串（只存受管理的複本，不存指標）。
+    private readonly byte[] _nameBytes = new byte[64];
+    private bool _hasNameCache;
+    private string _nameSeText = "";
+    private string _nameCsText = "";
     private ICondition _condition;
     private ITargetManager _target;
     private IFramework _framework;
@@ -33,8 +44,10 @@ public partial class Main : Window, IDisposable
     private bool _debug;
     private IDalamudTextureWrap? _unknown;
     private AddonAgent _addon;
-    private const string _githubIssuePath = "https://github.com/wolfcomp/MonsterDex/issues/new?template=fix_node.yaml";
-    private unsafe string IssueUrl => $"{_githubIssuePath}&mob_id={_currentNpc->NameId}%20-%20{_currentNpc->NameString}&content_type={_addon.ContentType:G}&version={Assembly.GetExecutingAssembly().GetName().Version?.ToString(3)}";
+    // 台服艦隊：資料回報導到本 org 的 fork（資料也是本 org 自 host 的 data-tc 分支），
+    // 不要送去上游 wolfcomp —— 那邊收不到也修不了繁中資料。
+    private const string _githubIssuePath = "https://github.com/ffxiv-tc-port/MonsterDex/issues/new?template=fix_node.yaml";
+    private string IssueUrl => $"{_githubIssuePath}&mob_id={_currentNpcNameId}%20-%20{_currentNpcName}&content_type={_addon.ContentType:G}&version={Assembly.GetExecutingAssembly().GetName().Version?.ToString(3)}";
 
     public Main(StorageHandler storage, CommandHandler command, ITargetManager target, IFramework framework, IClientState state, ICondition condition, ITextureProvider textureProvider, IPluginLog log, AddonAgent addon, WeatherManager weatehrManager) : base("MonsterDex MobView", ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoTitleBar)
     {
@@ -105,6 +118,11 @@ public partial class Main : Window, IDisposable
         _unknown?.Dispose();
         _locale = null!;
         _currentMob = null!;
+        // 這幾個是 static，外掛重載時會殘留 ⇒ 一併清掉，避免下一輪拿到上一輪的怪名。
+        _hasCurrentNpc = false;
+        _currentNpcName = "";
+        _currentNpcNameId = 0;
+        _currentNpcForayElement = null;
         _textureProvider = null!;
         _clientState = null!;
         _condition = null!;
@@ -125,7 +143,12 @@ public partial class Main : Window, IDisposable
         var data = _storage.GetInstances<MobData>().GetData(_targetId);
         if (data == null)
         {
-            _log.Information($"No data for {_targetId} setting unknowns.");
+            // 設定可讓深宮以外的內容類型（例如外景）也開窗，那裡查無資料是常態；只有深宮裡查無才值得 Information。
+            var noDataMsg = $"No data for {_targetId} setting unknowns.";
+            if (_addon.ContentType.HasFlag(ContentType.DeepDungeon))
+                _log.Information(noDataMsg);
+            else
+                _log.Debug(noDataMsg);
             data = new Mob
             {
                 Aggro = Aggro.Undefined,
@@ -163,22 +186,58 @@ public partial class Main : Window, IDisposable
             {
                 IsOpen = false;
                 _currentMob = null!;
+                _hasCurrentNpc = false;
             }
             return;
         }
 
         SetTarget(npc.NameId);
 
-        _currentNpc = (BattleChara*)npc.Address;
+        var address = (BattleChara*)npc.Address;
+        CaptureNpcSnapshot(address, npc);
         // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
         if (_currentMob is null)
         {
             IsOpen = false;
             return;
         }
-        if (_currentMob.Name != npc.Name.ToString())
-            _currentMob.Name = npc.Name.ToString();
-        IsOpen = true;
+        var name = address != null ? _nameSeText : npc.Name.ToString();
+        if (_currentMob.Name != name)
+            _currentMob.Name = name;
+        IsOpen = HasSomethingToShow();
+    }
+
+    // 只在 GetData 內、npc 剛取得的同一幀呼叫。兩個字串與舊寫法逐字相同：Dalamud 的 Name 與 CS 的 NameString 都只讀這 64 位元組。
+    private unsafe void RefreshNameCache(BattleChara* npc, IBattleNpc wrapper)
+    {
+        var raw = npc->Character.GameObject.Name;
+        if (_hasNameCache && raw.SequenceEqual(_nameBytes))
+            return;
+        _nameSeText = wrapper.Name.ToString();
+        _nameCsText = npc->NameString;
+        raw.CopyTo(_nameBytes);
+        _hasNameCache = true;
+    }
+
+    /// <summary>
+    /// 在指標仍然有效的那一刻（Framework.Update 回呼內，物件剛從 ITargetManager 取得）把 Draw 會用到的
+    /// 欄位抄成受管理值。之後所有繪製一律只讀這些快照，不再持有原生指標。
+    /// </summary>
+    private unsafe void CaptureNpcSnapshot(BattleChara* npc, IBattleNpc wrapper)
+    {
+        if (npc == null)
+        {
+            _hasCurrentNpc = false;
+            return;
+        }
+
+        RefreshNameCache(npc, wrapper);
+        _currentNpcNameId = npc->NameId;
+        _currentNpcName = _nameCsText;
+        _currentNpcSubKind = npc->Character.GameObject.SubKind;
+        var forayInfo = npc->GetForayInfo();
+        _currentNpcForayElement = forayInfo != null ? (uint)forayInfo->Element : null;
+        _hasCurrentNpc = true;
     }
 
     private bool EnabledContents() => _addon.ContentType.HasAnyFlag(_config.EnabledContentTypes);
@@ -189,19 +248,26 @@ public partial class Main : Window, IDisposable
         return _clientState.TerritoryType != 1311;
     }
 
-    public override void Draw()
+    private enum MobView
     {
-        using var _ = Font.Font.RegularFont.Push();
+        Blank,
+        DeepDungeon,
+        Eureka,
+        NoDisplay,
+        UnknownContent,
+    }
+
+    // Draw 畫哪一種由這裡決定；GetData 的開窗判斷讀同一份，不另寫一套條件。
+    private MobView GetMobView()
+    {
         // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
         switch (_currentMob.InstanceContentType)
         {
             case ContentType.DeepDungeon:
-                DrawDeepDungeonData();
-                break;
+                return MobView.DeepDungeon;
             case ContentType.Eureka:
 #if DEBUG
-                DrawEurekaData();
-                break;
+                return MobView.Eureka;
 #endif
             default:
                 // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
@@ -220,40 +286,60 @@ public partial class Main : Window, IDisposable
                     case ContentType.PublicTripleTriad:
                     case ContentType.LeapOfFaith:
                     case ContentType.Frontlines:
-                        break;
+                        return MobView.Blank;
                     case ContentType.Eureka:
                     case ContentType.IslandSanctuary:
                     case ContentType.Diadem:
                     case ContentType.Bozja:
                     case ContentType.None:
-                        DrawNoDisplay();
-                        break;
+                        return MobView.NoDisplay;
                     default:
-                        DrawUnknownContent();
-                        break;
+                        return MobView.UnknownContent;
                 }
+        }
+    }
+
+    // 查無資料的怪若只會畫出「無法顯示內容」那段字，就沒有任何怪物資訊可看 ⇒ 不開窗。
+    // 有資料的怪照舊開窗；debug_mob 不經過這裡。
+    private bool HasSomethingToShow() => !(_currentMob.IsGenerated && GetMobView() == MobView.NoDisplay);
+
+    public override void Draw()
+    {
+        using var _ = Font.Font.RegularFont.Push();
+        switch (GetMobView())
+        {
+            case MobView.DeepDungeon:
+                DrawDeepDungeonData();
+                break;
+            case MobView.Eureka:
+                DrawEurekaData();
+                break;
+            case MobView.NoDisplay:
+                DrawNoDisplay();
+                break;
+            case MobView.UnknownContent:
+                DrawUnknownContent();
                 break;
         }
     }
 
     private void DrawNoDisplay() => ImGui.TextUnformatted(string.Format(_locale.GetLocale("NoDisplay"), _addon.ContentType.ToString("G")));
 
-    private unsafe void DrawUnknownContent()
+    private void DrawUnknownContent()
     {
-        ImGui.TextUnformatted(string.Format(_locale.GetLocale("UnknownContent"), _currentNpc->NameString, _currentNpc->NameId));
+        ImGui.TextUnformatted(string.Format(_locale.GetLocale("UnknownContent"), _currentNpcName, _currentNpcNameId));
         // ReSharper disable once InvertIf
         if (ImGui.Button(_locale.GetLocale("CreateDataIssue")))
         {
             Util.OpenLink(IssueUrl);
         }
 
-        if (_config.Debug && _currentNpc != null)
+        if (_config.Debug && _hasCurrentNpc)
         {
             ImGui.TextUnformatted("Debug information");
-            var forayInfo = _currentNpc->GetForayInfo();
-            if (forayInfo != null)
-                ImGui.TextUnformatted($"NamePlateIconId: {(uint)forayInfo->Element + 60650}");
-            ImGui.TextUnformatted($"SubKind: {_currentNpc->Character.GameObject.SubKind}");
+            if (_currentNpcForayElement != null)
+                ImGui.TextUnformatted($"NamePlateIconId: {_currentNpcForayElement.Value + 60650}");
+            ImGui.TextUnformatted($"SubKind: {_currentNpcSubKind}");
             ImGui.TextUnformatted($"Current Time: {((Time)Framework.GetServerTime()).GetEorzeanTime()}");
             ImGui.TextUnformatted($"Weather: {_addon.Weather}");
             ImGui.TextUnformatted("WeatherIds:");

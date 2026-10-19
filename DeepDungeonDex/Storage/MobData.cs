@@ -17,6 +17,8 @@ public class MobData : ILoad<MobData>
             var id = uint.Parse(key[..splitInd]);
             var name = key[(splitInd + 1)..];
             value.Name = name;
+            // Id 標了 [YamlIgnore]，不在這裡補上就永遠是 0，Main.SetTarget「同一隻就不重查」的提早返回對已知怪永遠不成立。
+            value.Id = id;
             MobDictionary.Add(id, value);
         }
         return this;
@@ -59,7 +61,27 @@ public record Mob
     [YamlIgnore]
     public float LastProcessedWidth { get; set; }
 
-    public Weakness Weakness { get; set; }
+    private Weakness _weakness;
+
+    public Weakness Weakness
+    {
+        get => _weakness;
+        set
+        {
+            _weakness = value;
+            HasWeakness = true;
+        }
+    }
+
+    /// <summary>資料有寫 Weakness 欄位才為 true：YAML 缺這個欄位時不會呼叫上面的 setter。
+    /// 沒寫與寫明全部不吃都會讀成 0，只能靠它區分。</summary>
+    [YamlIgnore]
+    public bool HasWeakness { get; private set; }
+
+    /// <summary>非頭目的資料沒寫弱點＝不知道；頭目沒寫照舊當成全部不吃。
+    /// IPC 回 -1 與主視窗畫成未知都讀這一條，不要各寫一份條件。</summary>
+    [YamlIgnore]
+    public bool IsWeaknessUnknown => !HasWeakness && Aggro != Aggro.Boss;
     public Aggro Aggro { get; set; }
     public Threat Threat { get; set; }
     public ContentType InstanceContentType { get; set; }

@@ -76,9 +76,21 @@ public class Config : Window, IDisposable
     public override void Draw()
     {
         var _config = _handler.GetInstance<Configuration>()!;
-        var _localeKeys = _handler.GetInstance<LocaleKeys>()!;
-        var lang = _localeKeys.LocaleDictionary.Keys.ToArray()[_config.PrevLocale];
-        var _locale = (Locale)_handler.GetInstance($"{lang}/main.yml")!;
+        var _localeKeys = _handler.GetInstance<LocaleKeys>();
+        // 台服艦隊：語言資料是背景串行載入（RefreshLang 逐語言逐檔抓 raw.githubusercontent），
+        // 使用者切到某語言時該語言的 main.yml 可能還沒進 handler（強轉 null 會每幀 NRE）。
+        // 沒備好就顯示載入中並跳過本幀；缺當前語言時回退 en，再不行用空 Locale（GetLocale 缺鍵回退成 key）。
+        if (_localeKeys == null || _localeKeys.LocaleDictionary.Count == 0)
+        {
+            ImGui.TextUnformatted("Loading language data / 語言資料載入中…");
+            return;
+        }
+        var _langKeys = _localeKeys.LocaleDictionary.Keys.ToArray();
+        var _langIdx = _config.PrevLocale >= 0 && _config.PrevLocale < _langKeys.Length ? _config.PrevLocale : 0;
+        var lang = _langKeys[_langIdx];
+        var _locale = _handler.GetInstance($"{lang}/main.yml") as Locale
+                   ?? _handler.GetInstance("en/main.yml") as Locale
+                   ?? new Locale();
         using var _ = Font.Font.RegularFont.Push();
         ImGui.SetNextItemWidth(ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize("Opacity").X);
         if (ImGui.SliderFloat(_locale.GetLocale("Opacity"), ref _opacity, 0.0f, 1.0f))

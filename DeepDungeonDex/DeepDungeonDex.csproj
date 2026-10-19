@@ -6,7 +6,7 @@
 		<Version>2.13.6.2</Version>
 		<Description>即時顯示深層迷宮魔物的仇恨類型、威脅程度、狀態弱點與重要機制概覽。威脅程度主要供單人攻略參考；原名 DeepDungeonDex。</Description>
 		<Copyright>(c) WildWolf 2022-</Copyright>
-		<PackageProjectUrl>https://github.com/cycleapple/MonsterDex/tree/api13-tw</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/ffxiv-tc-port/MonsterDex</PackageProjectUrl>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
@@ -23,11 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Font\NotoSans-Regular.ttf" />
-		<EmbeddedResource Include="Font\NotoSansJP-Regular.otf" />
-		<EmbeddedResource Include="Font\NotoSansKR-Regular.otf" />
-		<EmbeddedResource Include="Font\NotoSansSC-Regular.otf" />
-		<EmbeddedResource Include="Font\NotoSansTC-Regular.otf" />
 		<EmbeddedResource Include="UnknownDebuf.png" />
 	</ItemGroup>
 

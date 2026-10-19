@@ -12,7 +12,7 @@
     "enemies"
   ],
   "Changelog": "",
-  "RepoUrl": "https://github.com/cycleapple/MonsterDex/tree/api13-tw",
+  "RepoUrl": "https://github.com/ffxiv-tc-port/MonsterDex",
   "ApplicableVersion": "any",
   "LoadPriority": 0,
   "AcceptsFeedback": false

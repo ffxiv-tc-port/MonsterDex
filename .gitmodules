@@ -1,4 +1,4 @@
 [submodule "DeepDungeonDexConsole/data"]
 	path = DeepDungeonDexConsole/data
-	url = https://github.com/cycleapple/MonsterDex.git
-	branch = api13-tw-l10n
+	url = https://github.com/ffxiv-tc-port/MonsterDex.git
+	branch = data-tc

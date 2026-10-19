@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DeepDungeonDex;
@@ -60,11 +61,26 @@ public partial class Requests
         }
         catch
         {
+            _stop.ThrowIfCancellationRequested();
             return null;
         }
     }
 
     public async Task RefreshLang(bool continuous = true)
+    {
+        Interlocked.Increment(ref _activeRefreshes);
+        try
+        {
+            _stop.ThrowIfCancellationRequested();
+            await RefreshLangCore(continuous);
+        }
+        finally
+        {
+            Interlocked.Decrement(ref _activeRefreshes);
+        }
+    }
+
+    private async Task RefreshLangCore(bool continuous)
     {
     StartRequest:
         RequestingLang = true;
@@ -78,7 +94,18 @@ public partial class Requests
         if (Handler.GetInstance("index.json") is not Dictionary<string, string[]> list)
             goto RefreshEnd;
 
-        foreach (var (name, _) in fileList.LocaleDictionary)
+        // 台服艦隊：把使用者當前選的語言排到最前，讓切語言後最快拿到該語言的 main.yml。
+        // 否則它排在字典後段時，前面每個語言的所有子檔＋data-tc 缺檔的 404 會拖到數分鐘後才輪到，
+        // 期間 Config/主視窗只能顯示英文（配合 Config.cs 的 null 回退防護，不再 NRE）。
+        var _cfg = Handler.GetInstance<Configuration>();
+        var _orderedLangs = fileList.LocaleDictionary.Keys.ToList();
+        if (_cfg != null && _cfg.PrevLocale >= 0 && _cfg.PrevLocale < _orderedLangs.Count)
+        {
+            var _cur = _orderedLangs[_cfg.PrevLocale];
+            _orderedLangs.Remove(_cur);
+            _orderedLangs.Insert(0, _cur);
+        }
+        foreach (var name in _orderedLangs)
         {
             var main = $"{name}/main.yml";
             _log.Verbose("Loading main language file");
@@ -110,6 +137,7 @@ public partial class Requests
                     }
                     catch (Exception e)
                     {
+                        _stop.ThrowIfCancellationRequested();
                         _log.Error(e, "");
                         _log.Debug($"Message: {content}");
                     }
@@ -123,8 +151,8 @@ public partial class Requests
         if (continuous)
         {
             _log.Verbose($"Refreshing file list in {CacheTime:g}");
-            await Task.Delay(CacheTime, _token.Token);
-            if (!_token.IsCancellationRequested)
+            await Task.Delay(CacheTime, _stop);
+            if (!_stop.IsCancellationRequested)
                 goto StartRequest;
         }
     }

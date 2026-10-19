@@ -12,6 +12,7 @@ namespace DeepDungeonDex;
 public class Main : IDalamudPlugin
 {
     private ServiceProvider _provider;
+    private IpcProvider? _ipc;
     private bool isDisposed;
 
     internal static ConcurrentBag<IDisposable> Services = new();
@@ -20,9 +21,10 @@ public class Main : IDalamudPlugin
     {
         _provider = BuildProvider(this, pluginInterface);
         _provider.GetRequiredService<Requests>();
-#pragma warning disable CS4014 
-        _provider.GetRequiredService<CommandHandler>().AddCommand(new[] { "refresh", "clear" }, () => { RefreshData(); }, "Refreshes the data internally stored");
-#pragma warning restore CS4014 
+        // 明確建構並自己持有：DisposeDI() 是靠反射摸 MS.DI 內部欄位的權宜做法，
+        // IPC 的取消註冊不應該押在它身上。
+        _ipc = _provider.GetRequiredService<IpcProvider>();
+        _provider.GetRequiredService<CommandHandler>().AddCommand(new[] { "refresh", "clear" }, () => _provider.GetRequiredService<Requests>().RunInBackground(RefreshData, "manual refresh"), "Refreshes the data internally stored");
 
         var sys = LoadWindows();
         pluginInterface.UiBuilder.Draw += sys.Draw;
@@ -40,6 +42,10 @@ public class Main : IDalamudPlugin
         if (isDisposed)
             return;
         isDisposed = true;
+        _ipc?.Dispose();
+        _ipc = null;
+        // 背景下載會寫 StorageHandler、觸發視窗的 StorageChanged ⇒ 在視窗與 DI 被收掉之前先停下來。
+        _provider.GetRequiredService<Requests>().Dispose();
         _provider.GetRequiredService<WindowSystem>().DisposeAndRemoveAllWindows();
         _provider.GetRequiredService<IDalamudPluginInterface>().UiBuilder.Draw -= _provider.GetRequiredService<WindowSystem>().Draw;
         // _provider.GetRequiredService<StorageHandler>().GetInstance<Configuration>()!.OnSizeChange -= _provider.GetRequiredService<DalamudPluginInterface>().UiBuilder.RebuildFonts;
@@ -92,6 +98,7 @@ public class Main : IDalamudPlugin
             .AddSingleton(provider => ActivatorUtilities.CreateInstance<Requests>(provider))
             .AddSingleton(provider => ActivatorUtilities.CreateInstance<Font.Font>(provider))
             .AddSingleton(provider => ActivatorUtilities.CreateInstance<CommandHandler>(provider))
+            .AddSingleton(provider => ActivatorUtilities.CreateInstance<IpcProvider>(provider))
             .AddSingleton(provider => ActivatorUtilities.CreateInstance<AddonAgent>(provider))
             .AddSingleton(provider => ActivatorUtilities.CreateInstance<WeatherManager>(provider))
             .BuildServiceProvider();

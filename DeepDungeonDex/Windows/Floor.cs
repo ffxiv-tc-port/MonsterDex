@@ -14,6 +14,14 @@ public class Floor : Window, IDisposable
     private Locale? _locale;
     private byte _debug;
     private string _dataPath = "";
+    // 設定物件整個生命週期不換（StorageHandler 只在建構時放一次）⇒ 不必每幀到儲存區重找。
+    private readonly Configuration _config;
+    // 由 _dataPath 衍生的字串，只在主執行緒（GetData／Draw）讀寫；_dataPath 換了才重組。
+    private string? _pathsFor;
+    private string _floorsPath = "";
+    private string _floorKeyPrefix = "";
+    private int _floorKeyFor = -1;
+    private string _floorKey = "";
 
     public Floor(StorageHandler storage, CommandHandler command, IFramework framework, ICondition condition, IClientState state, IPluginLog log, AddonAgent addon) : base("MonsterDex FloorGuide", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoTitleBar)
     {
@@ -48,6 +56,7 @@ public class Floor : Window, IDisposable
         }, show: false);
         command.AddCommand(new[] { "enable_floor", "e_floor", "enable_f", "ef" }, _addon.Restart, "Resets the floor getter function to try again");
         var config = _storage.GetInstance<Configuration>()!;
+        _config = config;
         SizeConstraints = new WindowSizeConstraints
         {
             MaximumSize = new Vector2(800 * config.WindowSizeScaled, 600),
@@ -80,10 +89,11 @@ public class Floor : Window, IDisposable
         if (_debug != 0)
             return;
 
-        if (_dataPath != "")
+        var dataPath = _dataPath;
+        if (dataPath != "")
         {
-            var config = _storage.GetInstance<Configuration>()!;
-            if (!_addon.DirectorDisabled && !config.HideFloor && _addon.Floor % 10 != 0 && _storage.GetInstance(_dataPath + "/Floors.yml") != null)
+            RefreshPaths(dataPath);
+            if (!_addon.DirectorDisabled && !_config.HideFloor && _addon.Floor % 10 != 0 && _storage.GetInstance(_floorsPath) != null)
                 IsOpen = true;
             else
                 IsOpen = false;
@@ -109,7 +119,8 @@ public class Floor : Window, IDisposable
 
     public override void Draw()
     {
-        var remap = (FloorData?)_storage.GetInstance(_dataPath + "/Floors.yml");
+        RefreshPaths(_dataPath);
+        var remap = (FloorData?)_storage.GetInstance(_floorsPath);
         if (remap == null) return;
         var floor = _debug == 0 ? _addon.Floor : _debug;
         floor = remap.FloorDictionary.GetValueOrDefault(floor, floor);
@@ -117,13 +128,33 @@ public class Floor : Window, IDisposable
         try
         {
             ImGui.Text("樓層指南");
-            ImGui.TextUnformatted(_locale?.GetLocale($"{_dataPath[(_dataPath.LastIndexOf("/", StringComparison.Ordinal) + 1)..]}{floor}"));
+            ImGui.TextUnformatted(_locale?.GetLocale(FloorKey(floor)));
         }
         catch (Exception e)
         {
             _log.Error(e, "Error trying to draw floor guide.");
             // ignored
         }
+    }
+
+    private void RefreshPaths(string dataPath)
+    {
+        if (ReferenceEquals(dataPath, _pathsFor))
+            return;
+        _floorsPath = dataPath + "/Floors.yml";
+        _floorKeyPrefix = dataPath[(dataPath.LastIndexOf("/", StringComparison.Ordinal) + 1)..];
+        _floorKeyFor = -1;
+        _pathsFor = dataPath;
+    }
+
+    private string FloorKey(byte floor)
+    {
+        if (_floorKeyFor != floor)
+        {
+            _floorKey = $"{_floorKeyPrefix}{floor}";
+            _floorKeyFor = floor;
+        }
+        return _floorKey;
     }
 
     public void Dispose()

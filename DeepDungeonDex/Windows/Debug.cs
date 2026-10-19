@@ -31,19 +31,19 @@ internal class Debug : Window, IDisposable
         if (!config.LoadAll)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1, 0, 0, 1));
-            ImGui.TextUnformatted("All font load is not enabled. Some glyphs will not be available.");
+            ImGui.TextUnformatted("未啟用全字型載入，部分字符將無法顯示。");
             ImGui.PopStyleColor();
         }
 
         if (_requests.IsRequesting)
         {
-            ImGui.TextUnformatted("Requesting data from Github...");
+            ImGui.TextUnformatted("正在從 Github 請求資料……");
         }
 
-        ImGui.TextUnformatted("Language list:");
+        ImGui.TextUnformatted("語言清單：");
         ImGui.BeginTable("##LanguageKeyList", 2, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit);
-        ImGui.TableSetupColumn("Name");
-        ImGui.TableSetupColumn("Value");
+        ImGui.TableSetupColumn("名稱");
+        ImGui.TableSetupColumn("數值");
         ImGui.TableHeadersRow();
         foreach (var (key, value) in _storage.GetInstances<LocaleKeys>().SelectMany(t => t.LocaleDictionary))
         {
@@ -55,11 +55,11 @@ internal class Debug : Window, IDisposable
         }
         ImGui.EndTable();
 
-        ImGui.TextUnformatted("Data:");
+        ImGui.TextUnformatted("資料：");
         ImGui.BeginTable("##StorageList", 3, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit);
-        ImGui.TableSetupColumn("Name");
-        ImGui.TableSetupColumn("Type");
-        ImGui.TableSetupColumn("Value");
+        ImGui.TableSetupColumn("名稱");
+        ImGui.TableSetupColumn("類型");
+        ImGui.TableSetupColumn("數值");
         ImGui.TableHeadersRow();
         foreach (var (key, value) in _storage.Storage.OrderBy(t => t.Value.GetType().Name.GetHashCode()))
         {
@@ -75,7 +75,7 @@ internal class Debug : Window, IDisposable
                     if (floor.FloorDictionary != null)
                         foreach (var (floorKey, floorValue) in floor.FloorDictionary)
                         {
-                            ImGui.TextUnformatted($"{floorKey} mapped to {floorValue}");
+                            ImGui.TextUnformatted($"{floorKey} 對應至 {floorValue}");
                         }
                     break;
                 case MobData mob:
@@ -83,21 +83,21 @@ internal class Debug : Window, IDisposable
                     {
                         ImGui.TextUnformatted($"{mobKey}");
                         ImGui.Indent();
-                        ImGui.TextUnformatted($"Name: {mobValue.Name}");
+                        ImGui.TextUnformatted($"名稱: {mobValue.Name}");
                         ImGui.SameLine(0, 14);
-                        ImGui.TextUnformatted($"Aggro: {mobValue.Aggro}");
+                        ImGui.TextUnformatted($"仇恨: {mobValue.Aggro}");
                         ImGui.SameLine(0, 14);
-                        ImGui.TextUnformatted($"Threat: {mobValue.Threat}");
+                        ImGui.TextUnformatted($"威脅: {mobValue.Threat}");
                         ImGui.SameLine(0, 14);
-                        ImGui.TextUnformatted($"Weakness: {mobValue.Weakness}");
+                        ImGui.TextUnformatted($"弱點: {mobValue.Weakness}");
                         ImGui.SameLine(0, 14);
-                        ImGui.TextUnformatted($"ContentType: {mobValue.InstanceContentType}");
+                        ImGui.TextUnformatted($"內容類型: {mobValue.InstanceContentType}");
                         ImGui.Unindent();
                     }
                     break;
                 case Locale locale:
                     ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1, 0, 0, 1));
-                    ImGui.TextUnformatted("Only displaying the first 30 characters in translation!");
+                    ImGui.TextUnformatted("翻譯內容僅顯示前 30 個字元！");
                     ImGui.PopStyleColor();
                     foreach (var (translationKey, translationValue) in locale.TranslationDictionary)
                     {
