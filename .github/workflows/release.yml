@@ -81,3 +81,4 @@ jobs:
 # 來挑 own_assets 的。用 MonsterDex.zip 會讓 own_assets 空掉,退回「抓 release 裡全部資產」,
 # manifest 也會被誤判 ⇒ repo.json 的欄位靜默不同步。
 # ci: 觸發 Actions 註冊 dispatch-only workflow(新 repo 首次)
+# workflow re-registration trigger 2026-10-26T17:10:04Z
