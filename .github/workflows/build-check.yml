@@ -50,3 +50,4 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release DeepDungeonDex/DeepDungeonDex.csproj -p:DalamudLibPath="$env:RUNNER_TEMP\dalamud-pinned\"
 # workflow re-registration trigger 2026-10-26T17:10:04Z
+# workflow re-registration trigger 2026-10-26T17:15:25Z
