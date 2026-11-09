@@ -275,7 +275,7 @@
 5480-deep palace sprite:
   InstanceContentType: DeepDungeon
   Threat: Easy
-  Aggro: Sight
+  Aggro: Proximity
   Weakness:
     - Stun
     - Sleep
