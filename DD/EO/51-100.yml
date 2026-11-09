@@ -18,7 +18,7 @@
 12180-Orthos ice sprite:
   InstanceContentType: DeepDungeon
   Threat: Caution
-  Aggro: Sight
+  Aggro: Proximity
   Weakness:
     - Slow
 12183-Orthos ymir:

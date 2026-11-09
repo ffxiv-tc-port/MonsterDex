@@ -1,7 +1,7 @@
 ﻿# PotD 1-10
 5479-palace sprite:
   Threat: Easy
-  Aggro: Sound
+  Aggro: Proximity
   Weakness:
     - Stun
   InstanceContentType: DeepDungeon
