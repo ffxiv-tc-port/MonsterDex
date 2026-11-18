@@ -39,8 +39,9 @@ public class StorageHandler : IDisposable
         try
         {
             _log.Verbose("Deserializing config");
-            Stream file = new FileStream(configPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            var binary = new BinaryReader(file);
+            // using：讀壞時 catch 之前就關檔，否則之後存檔換名會撞到還開著的檔。
+            using Stream file = new FileStream(configPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var binary = new BinaryReader(file);
             var config = new Configuration();
             file.Position = 0;
             byte flags;
@@ -107,7 +108,7 @@ public class StorageHandler : IDisposable
             _font.RegisterNewBuild(config.FontSize);
             return config;
         }
-        catch
+        catch (Exception e)
         {
             if (!configPath.EndsWith(".dat"))
             {
@@ -115,6 +116,8 @@ public class StorageHandler : IDisposable
                 configPath = Path.Combine(_path, "config.dat");
                 goto otherFile;
             }
+            if (File.Exists(configPath))
+                ConfigFileSafety.BackupUnreadable(configPath, $"讀取失敗（{e.GetType().Name}: {e.Message}），這次全部設定使用預設值", s => _log.Information("{Message}", s));
             _log.Verbose("Failed to deserialize config, creating new config");
             return new Configuration();
         }
