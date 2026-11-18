@@ -9,6 +9,7 @@ public class Config : Window, IDisposable
     private IDalamudPluginInterface _pluginInterface;
     private IServiceProvider _provider;
     private Font.Font _font;
+    private readonly IPluginLog _log;
     private float _opacity;
     private bool _clickthrough;
     private bool _hideRed;
@@ -22,13 +23,14 @@ public class Config : Window, IDisposable
     private ContentType[] AllContentTypes => _allContentTypes.Any() ? _allContentTypes : _allContentTypes = Enum.GetValues(typeof(ContentType)).Cast<ContentType>().ToArray();
 
 
-    public Config(IDalamudPluginInterface pluginInterface, StorageHandler handler, CommandHandler command, Requests requests, IServiceProvider provider, Font.Font font) : base("MonsterDex Config", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse)
+    public Config(IDalamudPluginInterface pluginInterface, StorageHandler handler, CommandHandler command, Requests requests, IServiceProvider provider, Font.Font font, IPluginLog log) : base("MonsterDex Config", ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse)
     {
         _handler = handler;
         _requests = requests;
         _provider = provider;
         _pluginInterface = pluginInterface;
         _font = font;
+        _log = log;
         var _config = _handler.GetInstance<Configuration>()!;
         _config.OnChange += OnChange;
         SizeConstraints = new WindowSizeConstraints
@@ -150,7 +152,15 @@ public class Config : Window, IDisposable
         if (ImGui.Button(_locale.GetLocale("Save")))
         {
             IsOpen = false;
-            _config.Save(_handler.GetFilePath(_config.GetType()));
+            var configPath = _handler.GetFilePath(_config.GetType());
+            try
+            {
+                _config.Save(configPath);
+            }
+            catch (Exception e)
+            {
+                _log.Warning("[設定] 寫入 {File} 失敗（{Type}: {Error}），原檔維持上一次的內容。", System.IO.Path.GetFileName(configPath), e.GetType().Name, e.Message);
+            }
             _font.RegisterNewBuild(_config.FontSize);
         }
         ImGui.SameLine();

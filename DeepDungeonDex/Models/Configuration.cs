@@ -1,4 +1,5 @@
 using System.IO;
+using Dalamud.Utility;
 
 namespace DeepDungeonDex.Models;
 
@@ -23,6 +24,8 @@ public class Configuration
     [JsonIgnore] public float WindowSizeScaled => Math.Max(FontSize / 16f, 1f) * RemoveScaling;
     [JsonIgnore] public Action<Configuration>? OnChange { get; set; }
 
+    // 寫入走 WriteAllBytesSafe（暫存檔＋落盤＋換名；殘留的 .tmp 會被覆寫，不會從此存不進去）。
+    // 失敗會擲例外、原檔維持上一次的內容；呼叫端負責接住（呼叫點在 Draw 內）。
     public void Save(string path)
     {
         if (PrevLocale != Locale && !LoadAll)
@@ -30,10 +33,7 @@ public class Configuration
             PrevLocale = Locale;
         }
         OnChange?.Invoke(this);
-        var origPath = path;
-        if(!path.EndsWith(".tmp"))
-            path += ".tmp";
-        Stream stream = File.Open(path, FileMode.CreateNew, FileAccess.ReadWrite, FileShare.ReadWrite);
+        var stream = new MemoryStream();
         BinaryWriter writer = new(stream);
         writer.Write(Version);
         byte flags = 0;
@@ -49,9 +49,6 @@ public class Configuration
         writer.Write(FontSize);
         writer.Write(Opacity);
         writer.Close();
-        stream.Close();
-        if (File.Exists(origPath))
-            File.Delete(origPath);
-        File.Move(path, origPath);
+        FilesystemUtil.WriteAllBytesSafe(path, stream.ToArray());
     }
 }
