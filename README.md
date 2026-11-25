@@ -1,6 +1,6 @@
 # MonsterDex
 
-[MonsterDex](https://github.com/wolfcomp/MonsterDex) 的台服移植版（插件庫裡的內部名稱是 `DeepDungeonDex`）。在**死者宮殿**、**天之御柱**、**正統優雷卡**選中魔物時，即時顯示牠的仇恨類型、威脅程度、行動抑制弱點與重要機制說明。
+[MonsterDex](https://github.com/wolfcomp/MonsterDex) 的台服移植版（插件倉庫裡的內部名稱是 `DeepDungeonDex`）。在**死者宮殿**、**天之御柱**、**正統優雷卡**選中魔物時，即時顯示牠的仇恨類型、威脅程度、行動抑制弱點與重要機制說明。
 
 ## 功能
 
@@ -8,7 +8,7 @@
 - **樓層指南**：進入新樓層時顯示該樓層的注意事項（可在設定中關閉）。
 - **設定**：透明度、字型大小、滑鼠穿透、顯示偵錯資訊、介面語言、要在哪些內容類型顯示。
 - **魔物資料**：從本 org 的資料分支下載；下載失敗時改用插件內建的備援資料。
-- **提供給其他插件的 IPC**：`MonsterDex.GetMobVulnerabilities` 依魔物名稱 ID 回傳可吃的行動抑制狀態（NecroLens 用它在怪物名稱後標示弱點）。
+- **提供給其他插件的 IPC**：`MonsterDex.GetMobVulnerabilities` 依魔物名稱 ID 回傳可吃的行動抑制狀態（[NecroLens](https://github.com/ffxiv-tc-port/NecroLens) 用它在怪物名稱後標示弱點）。
 
 ## 指令
 
@@ -19,12 +19,19 @@
 ## 台服版的修改
 
 - 魔物資料與備援資料改用台服官方的招式與狀態譯名，並同步我方的資料更正。
-- 魔物資料改從本 org 下載（org 轉為私人後仍可取得）。
+- 魔物資料改從本 org 的資料分支下載，不依賴上游的伺服器。
 - 新增給其他插件查詢弱點的 IPC。
 - 沒有弱點資料的非頭目改顯示「不知道」，不再當成全部不吃。
 - 選到沒有資料的魔物時不再跳出錯誤視窗。
+- 設定檔防護：讀不進來時先備份原檔再改用預設值；存檔失敗只記在 log，不讓設定視窗出錯。
 - 改用 Dalamud 預設字型、不再內嵌字型，安裝包大幅縮小。
 - 多處降低記憶體用量。
 - 介面繁體中文化。
 
+## 安裝
+
+`/xlsettings` 開「Dalamud 設定」→「試驗性功能」→「第三方插件倉庫」，加入 `https://raw.githubusercontent.com/ffxiv-tc-port/DalamudPluginsTC/main/repo.json` 並啟用、儲存，再到「插件管理員」（`/xlplugins`）安裝；同一個插件只裝這裡的版本，不要同時裝上游版。
+
 原作者：[WildWolf](https://github.com/wolfcomp/MonsterDex)
+
+授權：MIT（見 LICENSE）
